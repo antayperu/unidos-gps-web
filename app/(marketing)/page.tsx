@@ -4,6 +4,7 @@ import PainPoint from '@/components/home/PainPoint'
 import ServicesPreview from '@/components/home/ServicesPreview'
 import HowItWorks from '@/components/home/HowItWorks'
 import Testimonials from '@/components/home/Testimonials'
+import HomeCTA from '@/components/home/HomeCTA'
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <ServicesPreview />
       <HowItWorks />
       <Testimonials />
+      <HomeCTA />
     </>
   )
 }
