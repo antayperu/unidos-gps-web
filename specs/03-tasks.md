@@ -457,7 +457,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T21 — Página Cotizar (formulario UI, sin backend)
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T04
 - **Descripción:** Crear la página `/cotizar` con el formulario de cotización completo (UI y validación client-side). Sin integración con Supabase todavía (eso es T24). El formulario debe mostrar estado de éxito simulado para verificar el UX.
 - **Archivos permitidos:**
