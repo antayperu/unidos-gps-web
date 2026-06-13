@@ -1,6 +1,6 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 
-type Variant = 'primary' | 'secondary' | 'whatsapp'
+type Variant = 'primary' | 'secondary' | 'whatsapp' | 'ghost'
 
 const base =
   'inline-flex items-center justify-center gap-2 font-body font-medium text-base px-6 py-3 rounded-full min-h-[44px] min-w-[44px] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2'
@@ -12,6 +12,8 @@ const variants: Record<Variant, string> = {
     'border border-brand-primary-600 text-brand-primary-600 hover:bg-brand-primary-50 bg-transparent focus-visible:ring-brand-primary-500',
   whatsapp:
     'bg-whatsapp hover:bg-whatsapp-dark text-white focus-visible:ring-whatsapp',
+  ghost:
+    'border-2 border-white/70 text-white bg-transparent hover:bg-white/10 focus-visible:ring-white',
 }
 
 type ButtonAsButton = ButtonHTMLAttributes<HTMLButtonElement> & {

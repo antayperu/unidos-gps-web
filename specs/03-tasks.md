@@ -196,7 +196,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T07 — Sección Hero
 - **Prioridad:** P2
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T04, T06, T32
 - **Descripción:** Construir el componente `Hero` con imagen de fondo full-width + overlay de gradiente navy, headline H1, sub-headline, y dos CTAs (WhatsApp primario + "Ver servicios" secundario). La imagen hero usa `next/image` con `priority`. Animación de entrada sutil con Framer Motion.
 - **Archivos permitidos:**
