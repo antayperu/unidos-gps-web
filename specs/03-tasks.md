@@ -218,7 +218,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T08 — Sección StatsBand
 - **Prioridad:** P2
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T07, T32
 - **Descripción:** Construir el componente `StatsBand` con las 4 estadísticas confirmadas. Animación de contador numérico al entrar en viewport con Framer Motion. Grid 2×2 en móvil, 4 columnas en desktop.
 - **Archivos permitidos:**
