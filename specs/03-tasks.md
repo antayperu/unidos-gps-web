@@ -479,7 +479,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T22 — Setup de Supabase (tabla leads + RLS)
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T02
 - **Descripción:** Crear el proyecto en Supabase, ejecutar el schema SQL de `specs/02-design.md §3.3` para crear la tabla `leads`, activar RLS, crear la policy de insert-only para service_role. Documentar el proceso en `lib/supabase-schema.sql`. Crear el cliente server-side en `lib/supabase-server.ts`.
 - **Archivos permitidos:**
