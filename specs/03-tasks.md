@@ -257,7 +257,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T10 — Sección ServicesPreview
 - **Prioridad:** P2
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T04, T32
 - **Descripción:** Construir `ServicesPreview` con 4 `ServiceCard`. Cada card tiene imagen placeholder, título, descripción corta y link a la página de servicio correspondiente. Grid adaptativo. Crear `content/services.ts` con los datos de los 4 servicios.
 - **Archivos permitidos:**
