@@ -148,7 +148,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T36 — Páginas not-found y error con marca
 - **Prioridad:** P0
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T04, T32
 - **Descripción:** Crear las páginas de error del App Router de Next.js con identidad visual de marca: `not-found.tsx` (error 404) con mensaje amigable en español, logo y CTA para volver a la Home; `error.tsx` (error de runtime) con mensaje genérico y botón para reintentar. Ambas usan los primitivos de UI (T32) y el layout de marketing.
 - **Archivos permitidos:**
