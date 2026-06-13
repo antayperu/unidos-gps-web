@@ -122,6 +122,48 @@ _Versión 1.0 — 2026-06-11_
 
 ---
 
+## T32 — Sistema de primitivos de UI
+- **Prioridad:** P0
+- **Estado:** ⬜ Pendiente
+- **Depende de:** T03
+- **Descripción:** Construir los componentes primitivos de UI reutilizables que consumirán todas las secciones T07–T14: `Button` (variantes `primary`, `secondary`, `whatsapp`), `Container` (wrapper de ancho máximo con padding responsive), y `SectionHeading` (título + subtítulo de sección con jerarquía tipográfica). Instalar y configurar `lucide-react` como librería de íconos del proyecto. Ninguna sección de la Home debe recrear estos primitivos.
+- **Archivos permitidos:**
+  - `components/ui/Button.tsx`
+  - `components/ui/Container.tsx`
+  - `components/ui/SectionHeading.tsx`
+  - `package.json` (añadir `lucide-react`)
+- **Criterios de aceptación:**
+  - `Button` variante `primary`: fondo `brand-primary-600`, texto blanco, hover `brand-primary-700`.
+  - `Button` variante `secondary`: borde `brand-primary-600`, fondo transparente, texto `brand-primary-600`.
+  - `Button` variante `whatsapp`: fondo `#25D366`, texto blanco, hover `#128C7E`.
+  - Todas las variantes de `Button` tienen `min-h-[44px]` y `min-w-[44px]` para touch targets.
+  - `Container` aplica `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`.
+  - `SectionHeading` renderiza `<h2>` con `font-heading` y un subtítulo `<p>` opcional con `font-body`.
+  - `lucide-react` importable y tipado sin errores en TypeScript strict.
+  - Inspección visual de las 3 variantes de `Button` a 360/768/1280px sin desbordamiento.
+  - `npm run build` y `npm run lint` pasan sin errores.
+- **Verificación:** `npm run build && npm run lint` + inspección visual de las 3 variantes de `Button` en DevTools a 360/768/1280px
+
+---
+
+## T36 — Páginas not-found y error con marca
+- **Prioridad:** P0
+- **Estado:** ⬜ Pendiente
+- **Depende de:** T04, T32
+- **Descripción:** Crear las páginas de error del App Router de Next.js con identidad visual de marca: `not-found.tsx` (error 404) con mensaje amigable en español, logo y CTA para volver a la Home; `error.tsx` (error de runtime) con mensaje genérico y botón para reintentar. Ambas usan los primitivos de UI (T32) y el layout de marketing.
+- **Archivos permitidos:**
+  - `app/(marketing)/not-found.tsx`
+  - `app/(marketing)/error.tsx`
+- **Criterios de aceptación:**
+  - Navegar a una ruta inexistente muestra `not-found.tsx` con logo, mensaje en español y `Button` variante `primary` con texto "Volver al inicio".
+  - `error.tsx` incluye `'use client'` y recibe la prop `reset: () => void` de Next.js para reintentar.
+  - Ambas páginas son correctas a 360/768/1280px sin scroll horizontal.
+  - `<h1>` presente y descriptivo en ambas; sin salto de niveles de heading.
+  - `npm run build` pasa.
+- **Verificación:** `npm run dev` + navegar a `/ruta-inexistente` + verificar renderizado a 360/768/1280px
+
+---
+
 ## FASE P1 — Mockup Visual
 
 ---
@@ -155,7 +197,7 @@ _Versión 1.0 — 2026-06-11_
 ## T07 — Sección Hero
 - **Prioridad:** P2
 - **Estado:** ⬜ Pendiente
-- **Depende de:** T04, T06
+- **Depende de:** T04, T06, T32
 - **Descripción:** Construir el componente `Hero` con imagen de fondo full-width + overlay de gradiente navy, headline H1, sub-headline, y dos CTAs (WhatsApp primario + "Ver servicios" secundario). La imagen hero usa `next/image` con `priority`. Animación de entrada sutil con Framer Motion.
 - **Archivos permitidos:**
   - `components/home/Hero.tsx`
@@ -177,7 +219,7 @@ _Versión 1.0 — 2026-06-11_
 ## T08 — Sección StatsBand
 - **Prioridad:** P2
 - **Estado:** ⬜ Pendiente
-- **Depende de:** T07
+- **Depende de:** T07, T32
 - **Descripción:** Construir el componente `StatsBand` con las 4 estadísticas confirmadas. Animación de contador numérico al entrar en viewport con Framer Motion. Grid 2×2 en móvil, 4 columnas en desktop.
 - **Archivos permitidos:**
   - `components/home/StatsBand.tsx`
@@ -196,7 +238,7 @@ _Versión 1.0 — 2026-06-11_
 ## T09 — Sección PainPoint
 - **Prioridad:** P2
 - **Estado:** ⬜ Pendiente
-- **Depende de:** T04
+- **Depende de:** T04, T32
 - **Descripción:** Construir el componente `PainPoint` — sección de fondo oscuro (`brand-primary-900`) con dos columnas: pain points del robo (izquierda) y solución de protección (derecha). En móvil se apilan. Animación fade-in + slide-up al entrar en viewport.
 - **Archivos permitidos:**
   - `components/home/PainPoint.tsx`
@@ -216,7 +258,7 @@ _Versión 1.0 — 2026-06-11_
 ## T10 — Sección ServicesPreview
 - **Prioridad:** P2
 - **Estado:** ⬜ Pendiente
-- **Depende de:** T04
+- **Depende de:** T04, T32
 - **Descripción:** Construir `ServicesPreview` con 4 `ServiceCard`. Cada card tiene imagen placeholder, título, descripción corta y link a la página de servicio correspondiente. Grid adaptativo. Crear `content/services.ts` con los datos de los 4 servicios.
 - **Archivos permitidos:**
   - `components/home/ServicesPreview.tsx`
@@ -239,7 +281,7 @@ _Versión 1.0 — 2026-06-11_
 ## T11 — Sección HowItWorks (Stepper)
 - **Prioridad:** P2
 - **Estado:** ⬜ Pendiente
-- **Depende de:** T04
+- **Depende de:** T04, T32
 - **Descripción:** Construir `HowItWorks` con `StepperItem` para los 4 pasos del proceso. Fondo oscuro (`brand-primary-800`). Layout horizontal en desktop con línea conectora, vertical en móvil. Animación de stagger al entrar en viewport.
 - **Archivos permitidos:**
   - `components/home/HowItWorks.tsx`
@@ -261,7 +303,7 @@ _Versión 1.0 — 2026-06-11_
 ## T12 — Sección Testimonials
 - **Prioridad:** P2
 - **Estado:** ⬜ Pendiente
-- **Depende de:** T04
+- **Depende de:** T04, T32
 - **Descripción:** Construir `Testimonials` con `TestimonialCard`. Los testimonios son placeholders marcados como `[DATO REAL PENDIENTE]`. Crear `content/testimonials.ts` con datos de ejemplo tipados. Fondo neutral-50 o blanco.
 - **Archivos permitidos:**
   - `components/home/Testimonials.tsx`
@@ -283,7 +325,7 @@ _Versión 1.0 — 2026-06-11_
 ## T13 — Sección HomeCTA
 - **Prioridad:** P2
 - **Estado:** ⬜ Pendiente
-- **Depende de:** T04
+- **Depende de:** T04, T32
 - **Descripción:** Construir el `HomeCTA` — sección final con gradiente navy, headline de cierre, botón WhatsApp principal y teléfono clicable. CTA de máximo impacto y conversión.
 - **Archivos permitidos:**
   - `components/home/HomeCTA.tsx`
@@ -302,7 +344,7 @@ _Versión 1.0 — 2026-06-11_
 ## T14 — Componente WhatsAppFloat
 - **Prioridad:** P2
 - **Estado:** ⬜ Pendiente
-- **Depende de:** T04
+- **Depende de:** T04, T32
 - **Descripción:** Construir el botón flotante de WhatsApp fijo en la esquina inferior derecha. Presente en todas las páginas vía el layout. Animación de entrada al cargar. No obstruye contenido crítico.
 - **Archivos permitidos:**
   - `components/layout/WhatsAppFloat.tsx`
@@ -472,10 +514,28 @@ _Versión 1.0 — 2026-06-11_
 
 ---
 
-## T24 — Integración formulario ↔ API route ↔ Supabase
+## T34 — Anti-spam: honeypot + protección del formulario
 - **Prioridad:** P3
 - **Estado:** ⬜ Pendiente
 - **Depende de:** T21, T23
+- **Descripción:** Agregar protección anti-spam al formulario de cotización. Implementar: (1) campo honeypot oculto en `QuoteForm` que, si viene relleno, descarta el submit silenciosamente sin alertar al bot; (2) validación del honeypot en la API route con respuesta falsa 200 (no exponer la detección). La integración con Cloudflare Turnstile se deja documentada como opcional a activar si el volumen de spam lo justifica.
+- **Archivos permitidos:**
+  - `components/ui/QuoteForm.tsx` (añadir campo honeypot)
+  - `app/api/leads/route.ts` (añadir validación honeypot server-side)
+- **Criterios de aceptación:**
+  - El campo honeypot está en el DOM pero invisible (`position: absolute; opacity: 0; pointer-events: none`), con `autocomplete="off"` y nombre genérico que atraiga bots (ej. `website`).
+  - Si el campo honeypot viene relleno, la API retorna `200` (respuesta falsa) pero NO inserta el lead en Supabase.
+  - La experiencia del usuario legítimo no se ve afectada a 360/768/1280px.
+  - Rellenar manualmente el honeypot via DevTools y enviar el formulario NO crea registro en Supabase.
+  - `npm run build` pasa.
+- **Verificación:** `npm run dev` + rellenar honeypot manualmente via DevTools + confirmar que NO aparece registro en Supabase dashboard
+
+---
+
+## T24 — Integración formulario ↔ API route ↔ Supabase
+- **Prioridad:** P3
+- **Estado:** ⬜ Pendiente
+- **Depende de:** T21, T23, T34
 - **Descripción:** Conectar el `QuoteForm` (T21) con la API route (T23). Manejar todos los estados de respuesta en el cliente: loading, success (con opción de ir a WhatsApp), error de validación (mostrar errores en campos), error de servidor (mensaje genérico).
 - **Archivos permitidos:**
   - `components/ui/QuoteForm.tsx` (actualizar)
@@ -487,6 +547,46 @@ _Versión 1.0 — 2026-06-11_
   - Anti-duplicado funciona: segundo envío en < 60s muestra mensaje apropiado.
   - `npm run build` pasa.
 - **Verificación:** `npm run dev` + envío real del formulario + verificar lead en Supabase dashboard
+
+---
+
+## T33 — Notificación por email de lead nuevo
+- **Prioridad:** P3
+- **Estado:** ⬜ Pendiente
+- **Depende de:** T23
+- **Descripción:** Implementar notificación automática por email a `comercial@unidosporgps.pe` cada vez que se inserta un nuevo lead válido en Supabase. Implementar via Resend (API de email transaccional) llamado desde la API route `/api/leads` después de la inserción exitosa. El email debe incluir todos los datos del lead. Si el envío de email falla, el lead se guarda igualmente (error no bloqueante).
+- **Archivos permitidos:**
+  - `app/api/leads/route.ts` (añadir llamada a Resend tras inserción exitosa)
+  - `lib/email.ts` (helper de Resend que construye y envía el email)
+  - `package.json` (añadir `resend`)
+  - `.env.example` (añadir `RESEND_API_KEY` con valor vacío y comentario)
+- **Criterios de aceptación:**
+  - Al insertar un lead válido, `comercial@unidosporgps.pe` recibe un email en menos de 60 segundos.
+  - El email contiene: nombre completo, teléfono, tipo de servicio solicitado, mensaje y timestamp.
+  - Si Resend falla (red, key inválida), la API sigue retornando `200` y el lead queda en Supabase.
+  - `RESEND_API_KEY` nunca aparece en archivos del repo (solo en `.env.local` y panel de Vercel).
+  - `npm run build` pasa.
+- **Verificación:** `npm run dev` + enviar formulario con datos válidos + verificar recepción del email en `comercial@unidosporgps.pe`
+
+---
+
+## T35 — Analítica y tracking de conversión
+- **Prioridad:** P3
+- **Estado:** ⬜ Pendiente
+- **Depende de:** T15, T24
+- **Descripción:** Integrar Vercel Analytics para métricas de tráfico y Core Web Vitals. Añadir eventos de conversión custom: submit exitoso del formulario de cotización (`lead_submitted`) y clics en el botón flotante de WhatsApp (`whatsapp_click`). Los eventos se implementan via `@vercel/analytics/react`.
+- **Archivos permitidos:**
+  - `app/layout.tsx` (añadir `<Analytics />` de `@vercel/analytics/react`)
+  - `components/ui/QuoteForm.tsx` (añadir `track('lead_submitted')` en submit exitoso)
+  - `components/layout/WhatsAppFloat.tsx` (añadir `track('whatsapp_click')` en el `onClick`)
+  - `package.json` (añadir `@vercel/analytics`)
+- **Criterios de aceptación:**
+  - El dashboard de Vercel Analytics muestra tráfico del sitio tras el primer deploy post-T35.
+  - El evento `lead_submitted` aparece en Vercel Analytics al enviar el formulario exitosamente.
+  - El evento `whatsapp_click` aparece al hacer clic en el botón flotante.
+  - Sin errores de consola relacionados con Analytics a 360/768/1280px.
+  - `npm run build` pasa.
+- **Verificación:** Deploy en Vercel + enviar formulario + clic en WhatsApp float + verificar eventos en Vercel Analytics dashboard (puede tardar 1–2 minutos en aparecer)
 
 ---
 
@@ -613,3 +713,61 @@ _Versión 1.0 — 2026-06-11_
   - No hay errores de consola en producción.
   - Lighthouse ≥ 95 en el dominio final (no solo en Vercel subdomain).
 - **Verificación:** Smoke test manual en dispositivo móvil real (Android) + desktop Chrome
+
+---
+
+## Bloqueantes de contenido del cliente
+
+> Estos ítems son datos reales que el cliente debe proveer antes de que el sitio pueda lanzarse a producción. Están marcados como `[DATO REAL PENDIENTE]` en el código fuente. Reunir esta información en paralelo con el desarrollo.
+
+### Imágenes
+
+| Ítem | Usado en | Especificación técnica |
+|---|---|---|
+| Imagen hero principal | T07 — `hero-bg.webp` | Fotografía de alta resolución (mín. 1920×1080px). Tema: vehículo protegido, ciudad nocturna o GPS instalado. Formato WebP o JPG. |
+| Imagen servicio GPS Vehicular | T10, T16 | Relación de aspecto 16:9, mín. 800×450px |
+| Imagen servicio GPS Flotas | T10, T17 | Relación de aspecto 16:9, mín. 800×450px |
+| Imagen servicio Unidos Liberty | T10, T18 | Relación de aspecto 16:9, mín. 800×450px |
+| Imagen servicio Dashcam IA | T10, T19 | Relación de aspecto 16:9, mín. 800×450px |
+| Fotos de equipo (opcional) | T20 — Nosotros | Formato cuadrado o 3:4, mín. 400×400px por persona |
+
+### Cifras para StatsBand (T08)
+
+Los 4 valores numéricos con sus etiquetas. Ejemplos de qué proveer:
+- Número de vehículos protegidos actualmente
+- Años en el mercado (o año de fundación)
+- Tasa de recuperación de vehículos robados (%)
+- Número de clientes activos o ciudades con cobertura
+
+### Testimonios reales (T12)
+
+Mínimo 3 testimonios. Por cada uno:
+- Nombre del cliente (o iniciales si prefiere anonimato)
+- Tipo de cliente: "propietario particular" o "gestor de flota"
+- Texto del testimonio (2–4 oraciones)
+- Foto del cliente (opcional, 1:1, mín. 80×80px)
+
+### Copy de servicios (T16–T19)
+
+Por cada servicio (GPS Vehicular, GPS Flotas, Unidos Liberty, Dashcam IA):
+- Descripción corta (1–2 oraciones para la ServiceCard)
+- Descripción larga (para la página interna)
+- Lista completa de features/características incluidas
+- Precio o rango de precio (si se va a publicar)
+- Diferenciadores vs. la competencia
+
+### Datos corporativos para Nosotros (T20)
+
+- Año de fundación
+- Historia de la empresa (2–3 párrafos)
+- Misión y visión (si existen formalmente)
+- Nombres y cargos del equipo (para sección de equipo, si se decide incluir)
+- Certificaciones, partnerships o reconocimientos relevantes
+
+### Presencia digital
+
+- URL de Facebook (si existe)
+- URL de Instagram (si existe)
+- URL de LinkedIn (si existe)
+- URL de YouTube / TikTok (si existe)
+- Google Business Profile (para Schema.org LocalBusiness en T28)
