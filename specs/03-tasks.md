@@ -64,7 +64,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T03 — Design tokens en Tailwind config
 - **Prioridad:** P0
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T01, T02
 - **Descripción:** Implementar todos los design tokens de `specs/02-design.md §1` en `tailwind.config.ts`: paleta de colores completa (usando los hex confirmados de T01), fuentes Google (Plus Jakarta Sans + Inter via `next/font`), escala tipográfica fluida con `clamp()`, border radii, sombras personalizadas. Documentar las variables CSS en `globals.css`.
 - **Archivos permitidos:**

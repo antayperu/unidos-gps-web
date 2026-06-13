@@ -2,7 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-  CSS custom properties (design tokens) are added in T03.
-  Do not add hard-coded color or typography values here.
-*/
+@layer base {
+  :root {
+    /* Brand primary — navy blue (all values confirmed in T01 from logo.png) */
+    --color-brand-primary-950: #060D1C;
+    --color-brand-primary-900: #0A192F;
+    --color-brand-primary-800: #0D2F48;
+    --color-brand-primary-700: #0F3560;
+    --color-brand-primary-600: #123C6E;
+    --color-brand-primary-500: #214E9F;
+    --color-brand-primary-400: #3A6DBF;
+    --color-brand-primary-300: #6A95D6;
+    --color-brand-primary-200: #A5C0E8;
+    --color-brand-primary-100: #D5E4F5;
+    --color-brand-primary-50: #EBF2FB;
+
+    /* Emergency red (confirmed T01 — not orange) */
+    --color-brand-emergency: #DD0303;
+    --color-brand-emergency-dark: #B50202;
+
+    /* WhatsApp */
+    --color-whatsapp: #25D366;
+    --color-whatsapp-dark: #128C7E;
+
+    /* Semantic */
+    --color-success: #16A34A;
+    --color-error: #DC2626;
+    --color-warning: #D97706;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-neutral-900 bg-white antialiased;
+  }
+}
