@@ -2,6 +2,7 @@ import Hero from '@/components/home/Hero'
 import StatsBand from '@/components/home/StatsBand'
 import PainPoint from '@/components/home/PainPoint'
 import ServicesPreview from '@/components/home/ServicesPreview'
+import HowItWorks from '@/components/home/HowItWorks'
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <StatsBand />
       <PainPoint />
       <ServicesPreview />
+      <HowItWorks />
     </>
   )
 }
