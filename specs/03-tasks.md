@@ -387,7 +387,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T16 — Página GPS Vehicular Particular
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T04, T10
 - **Descripción:** Crear la página `/servicios/gps-vehicular` usando el template `ServicePage`. Incluye: hero de la página, descripción del servicio, lista de features, imagen, CTA de cotización.
 - **Archivos permitidos:**
@@ -405,7 +405,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T17 — Página GPS para Flotas
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T16
 - **Descripción:** Crear la página `/servicios/gps-flotas` usando `ServicePage`. Enfoque en el público B2B.
 - **Archivos permitidos:**
@@ -417,7 +417,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T18 — Página Unidos Liberty
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T16
 - **Descripción:** Crear la página `/servicios/unidos-liberty` usando `ServicePage`.
 - **Archivos permitidos:**
@@ -429,7 +429,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T19 — Página Dashcam con IA
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T16
 - **Descripción:** Crear la página `/servicios/dashcam-ia` usando `ServicePage`. Marcar features pendientes de confirmación con `[DATO REAL PENDIENTE]` en el código.
 - **Archivos permitidos:**
