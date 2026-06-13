@@ -302,7 +302,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T12 — Sección Testimonials
 - **Prioridad:** P2
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T04, T32
 - **Descripción:** Construir `Testimonials` con `TestimonialCard`. Los testimonios son placeholders marcados como `[DATO REAL PENDIENTE]`. Crear `content/testimonials.ts` con datos de ejemplo tipados. Fondo neutral-50 o blanco.
 - **Archivos permitidos:**
@@ -324,7 +324,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T13 — Sección HomeCTA
 - **Prioridad:** P2
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T04, T32
 - **Descripción:** Construir el `HomeCTA` — sección final con gradiente navy, headline de cierre, botón WhatsApp principal y teléfono clicable. CTA de máximo impacto y conversión.
 - **Archivos permitidos:**
@@ -343,7 +343,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T14 — Componente WhatsAppFloat
 - **Prioridad:** P2
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T04, T32
 - **Descripción:** Construir el botón flotante de WhatsApp fijo en la esquina inferior derecha. Presente en todas las páginas vía el layout. Animación de entrada al cargar. No obstruye contenido crítico.
 - **Archivos permitidos:**
@@ -364,7 +364,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T15 — Integración y revisión final de la Home
 - **Prioridad:** P2
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T07, T08, T09, T10, T11, T12, T13, T14
 - **Descripción:** Ensamblar todas las secciones en `app/(marketing)/page.tsx`. Revisar el flujo visual completo de la Home, ajustar espaciados, orden de secciones y transiciones entre ellas. Ejecutar Lighthouse para obtener baseline de métricas.
 - **Archivos permitidos:**
