@@ -441,7 +441,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T20 — Página Nosotros
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T04
 - **Descripción:** Crear la página `/nosotros` con historia de la empresa, valores, equipo y diferenciadores. Contenido `[DATO REAL PENDIENTE]` donde no haya información confirmada. CTA de cotización al final.
 - **Archivos permitidos:**
