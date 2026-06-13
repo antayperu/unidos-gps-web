@@ -82,7 +82,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T04 — Componentes base Header y Footer
 - **Prioridad:** P0
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T02, T03
 - **Descripción:** Construir `Header` y `Footer` completos con contenido real de la marca. Header: logo, navegación principal, teléfono de emergencia clicable, menú hamburguesa para móvil con Framer Motion. Footer: logo negativo, links, contacto, redes sociales, copyright. Ambos integrados en `app/(marketing)/layout.tsx`.
 - **Archivos permitidos:**
