@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  CSS custom properties (design tokens) are added in T03.
+  Do not add hard-coded color or typography values here.
+*/

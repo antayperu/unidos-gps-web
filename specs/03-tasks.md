@@ -35,7 +35,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T02 — Scaffolding de Next.js + TypeScript + Tailwind
 - **Prioridad:** P0
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T01
 - **Descripción:** Inicializar el proyecto Next.js 14+ con App Router, TypeScript strict, Tailwind CSS, ESLint y Prettier. Configurar el alias `@/` en `tsconfig.json`. Crear `.env.example` con las keys de Supabase vacías. Actualizar `.gitignore`.
 - **Archivos permitidos:**

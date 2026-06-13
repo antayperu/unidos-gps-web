@@ -1,4 +1,37 @@
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# Next.js
 .next/
-.env*
+out/
+
+# Build output
+build/
+dist/
+
+# Vercel
 .vercel/
+
+# Environment variables — never commit .env.local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# .env.example IS committed (serves as template)
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
