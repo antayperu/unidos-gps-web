@@ -280,7 +280,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T11 — Sección HowItWorks (Stepper)
 - **Prioridad:** P2
-- **Estado:** ✅ Completado — 2026-06-13
+- **Estado:** ✅ Completado — 2026-06-13 · Animaciones verificadas post-fix framer-motion v11.18.2
 - **Depende de:** T04, T32
 - **Descripción:** Construir `HowItWorks` con `StepperItem` para los 4 pasos del proceso. Fondo oscuro (`brand-primary-800`). Layout horizontal en desktop con línea conectora, vertical en móvil. Animación de stagger al entrar en viewport.
 - **Archivos permitidos:**
