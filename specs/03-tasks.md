@@ -237,7 +237,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T09 — Sección PainPoint
 - **Prioridad:** P2
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completado — 2026-06-13
 - **Depende de:** T04, T32
 - **Descripción:** Construir el componente `PainPoint` — sección de fondo oscuro (`brand-primary-900`) con dos columnas: pain points del robo (izquierda) y solución de protección (derecha). En móvil se apilan. Animación fade-in + slide-up al entrar en viewport.
 - **Archivos permitidos:**
