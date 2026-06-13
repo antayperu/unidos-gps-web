@@ -170,7 +170,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T06 — Mockup HTML estático de Home (móvil + desktop)
 - **Prioridad:** P1
-- **Estado:** ⬜ Pendiente
+- **Estado:** 🟨 En revisión — pendiente aprobación visual del cliente
 - **Depende de:** T01, T03
 - **Descripción:** Crear dos archivos HTML estáticos con CSS inline/embedded que representen fielmente el diseño visual de la Home completa: `home-mobile.html` (360px) y `home-desktop.html` (1280px). Usar los design tokens de `specs/02-design.md`. Incluir todas las secciones: Hero, StatsBand, PainPoint, ServicesPreview, HowItWorks, Testimonials, HomeCTA. Usar imágenes placeholder (no las finales). **El objetivo es obtener aprobación visual ANTES de construir componentes React.**
 - **Archivos permitidos:**

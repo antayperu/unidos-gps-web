@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidos por GPS — Home Mobile (360px)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-950: #060D1C;
+      --primary-900: #0A192F;
+      --primary-800: #0D2F48;
+      --primary-700: #0F3560;
+      --primary-600: #123C6E;
+      --primary-500: #214E9F;
+      --primary-400: #3A6DBF;
+      --primary-300: #6A95D6;
+      --primary-200: #A5C0E8;
+      --primary-100: #D5E4F5;
+      --primary-50:  #EBF2FB;
+      --emergency:   #DD0303;
+      --emergency-dark: #B50202;
+      --whatsapp:    #25D366;
+      --whatsapp-dark: #128C7E;
+      --neutral-900: #111827;
+      --neutral-700: #374151;
+      --neutral-500: #6B7280;
+      --neutral-300: #D1D5DB;
+      --neutral-100: #F3F4F6;
+      --neutral-50:  #F9FAFB;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--neutral-900);
+      background: white;
+      max-width: 360px;
+      margin: 0 auto;
+      overflow-x: hidden;
+    }
+    .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img { height: 36px; width: auto; }
+    .hamburger {
+      display: flex; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 8px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--neutral-900); border-radius: 2px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--primary-900) 0%, var(--primary-600) 100%);
+      padding: 64px 20px 56px;
+      text-align: center;
+      color: white;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: white;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-ctas { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: 'Inter', sans-serif; font-weight: 500;
+      padding: 14px 24px; border-radius: 9999px;
+      min-height: 44px; min-width: 44px;
+      font-size: 0.9375rem; text-decoration: none;
+      transition: background 0.2s; cursor: pointer; border: none;
+      width: 100%; max-width: 280px;
+    }
+    .btn-whatsapp { background: var(--whatsapp); color: white; }
+    .btn-outline-white { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.7); }
+    .btn-primary { background: var(--primary-600); color: white; }
+    .btn-secondary { background: transparent; color: var(--primary-600); border: 2px solid var(--primary-600); }
+
+    /* ── SECTION BASE ── */
+    section { padding: 56px 20px; }
+    .section-heading { text-align: center; margin-bottom: 40px; }
+    .section-heading h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.625rem; font-weight: 700;
+      color: var(--primary-900);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .section-heading p {
+      font-size: 0.9375rem;
+      color: var(--neutral-500);
+      line-height: 1.6;
+    }
+
+    /* ── STATS BAND ── */
+    .stats { background: white; padding: 48px 20px; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .stat-item { text-align: center; padding: 20px 12px; }
+    .stat-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.25rem; font-weight: 800;
+      color: var(--primary-600);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 0.8125rem; color: var(--neutral-500);
+      font-weight: 500; line-height: 1.4;
+    }
+
+    /* ── PAIN POINT ── */
+    .painpoint { background: var(--primary-900); }
+    .painpoint .section-heading h2 { color: white; }
+    .painpoint .section-heading p { color: rgba(255,255,255,0.7); }
+    .pain-col { margin-bottom: 36px; }
+    .pain-col h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.125rem; font-weight: 700;
+      color: white; margin-bottom: 20px;
+    }
+    .pain-col ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .pain-col li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.9375rem; color: rgba(255,255,255,0.85);
+      line-height: 1.5;
+    }
+    .icon-x {
+      flex-shrink: 0; width: 22px; height: 22px;
+      background: var(--emergency); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 0.75rem; font-weight: 700; margin-top: 1px;
+    }
+    .icon-check {
+      flex-shrink: 0; width: 22px; height: 22px;
+      background: var(--whatsapp); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 0.75rem; font-weight: 700; margin-top: 1px;
+    }
+    .pain-divider {
+      border: none; border-top: 1px solid rgba(255,255,255,0.15);
+      margin: 32px 0;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--neutral-50); }
+    .services-grid { display: flex; flex-direction: column; gap: 20px; }
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .service-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--primary-100);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary-400);
+      font-size: 0.8125rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .service-body { padding: 20px; }
+    .service-body h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--primary-900);
+      margin-bottom: 8px;
+    }
+    .service-body p {
+      font-size: 0.875rem; color: var(--neutral-500);
+      line-height: 1.6; margin-bottom: 14px;
+    }
+    .service-link {
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--primary-500); text-decoration: none;
+    }
+
+    /* ── HOW IT WORKS (VERTICAL STEPPER) ── */
+    .howitworks { background: var(--primary-800); }
+    .howitworks .section-heading h2 { color: white; }
+    .howitworks .section-heading p { color: rgba(255,255,255,0.7); }
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex; gap: 16px;
+      padding-bottom: 32px;
+      position: relative;
+    }
+    .step:last-child { padding-bottom: 0; }
+    .step-left {
+      display: flex; flex-direction: column; align-items: center;
+      flex-shrink: 0; width: 40px;
+    }
+    .step-circle {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--emergency);
+      color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; z-index: 1;
+    }
+    .step-line {
+      width: 2px; flex: 1;
+      background: var(--primary-500);
+      margin-top: 8px;
+      min-height: 24px;
+    }
+    .step:last-child .step-line { display: none; }
+    .step-content { padding-top: 8px; }
+    .step-content h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: white; margin-bottom: 6px;
+    }
+    .step-content p {
+      font-size: 0.875rem; color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: white; }
+    .testimonials-grid { display: flex; flex-direction: column; gap: 20px; }
+    .testimonial-card {
+      background: var(--neutral-50);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .testimonial-header {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px;
+    }
+    .avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--primary-100);
+      flex-shrink: 0;
+    }
+    .testimonial-meta strong {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9375rem; font-weight: 700;
+      color: var(--primary-900); display: block;
+    }
+    .testimonial-meta span {
+      font-size: 0.8125rem; color: var(--neutral-500);
+    }
+    .stars { color: #F59E0B; font-size: 0.875rem; margin-bottom: 10px; }
+    .testimonial-text {
+      font-size: 0.9rem; color: var(--neutral-700);
+      line-height: 1.6; font-style: italic;
+    }
+    .placeholder-tag {
+      display: inline-block;
+      background: #FEF3C7; color: #92400E;
+      font-size: 0.75rem; font-weight: 500;
+      padding: 2px 8px; border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    /* ── HOME CTA ── */
+    .homecta {
+      background: linear-gradient(160deg, var(--primary-700), var(--primary-900));
+      text-align: center;
+      color: white;
+    }
+    .homecta h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.75rem; font-weight: 800;
+      color: white; line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .homecta p {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .phone-link {
+      display: block; margin-top: 16px;
+      font-size: 0.875rem; color: rgba(255,255,255,0.6);
+      text-decoration: none;
+    }
+
+    /* ── FOOTER ── */
+    footer { background: var(--primary-950); padding: 48px 20px 32px; }
+    .footer-logo { margin-bottom: 16px; }
+    .footer-logo img { height: 36px; width: auto; }
+    .footer-tagline {
+      font-size: 0.875rem; color: rgba(255,255,255,0.5);
+      line-height: 1.6; margin-bottom: 32px; max-width: 240px;
+    }
+    .footer-section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem; font-weight: 700;
+      color: white; text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 16px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .footer-links a {
+      font-size: 0.875rem; color: rgba(255,255,255,0.65);
+      text-decoration: none;
+    }
+    .footer-contact { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .contact-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.875rem; color: rgba(255,255,255,0.75);
+      text-decoration: none;
+    }
+    .contact-badge {
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 0.75rem; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .badge-emergency { background: var(--emergency); }
+    .badge-whatsapp { background: var(--whatsapp); }
+    .footer-divider {
+      border: none; border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 24px 0;
+    }
+    .footer-copyright {
+      font-size: 0.75rem; color: rgba(255,255,255,0.35); text-align: center;
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 20px; z-index: 100;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--whatsapp);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 4px 8px rgba(0,0,0,0.1);
+      text-decoration: none;
+    }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="../../public/images/logo.png" alt="Unidos por GPS">
+    <div class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">🛡️ GPS Vehicular Perú</div>
+    <h1>Protección inteligente para tu vehículo</h1>
+    <p>Monitoreo GPS 24/7 con instalación oculta y app propia. Sin pago de equipo.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/51933452214" class="btn btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+      <a href="#servicios" class="btn btn-outline-white">Ver servicios</a>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">+10</div>
+        <div class="stat-label">Años de<br>experiencia</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Monitoreo<br>activo</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">App</div>
+        <div class="stat-label">iOS y Android<br>propia</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">$0</div>
+        <div class="stat-label">Pago de<br>equipo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINT -->
+  <section class="painpoint">
+    <div class="section-heading">
+      <h2>¿Tu vehículo está realmente protegido?</h2>
+      <p>Cada año se roban miles de vehículos en el Perú. El GPS es tu primera línea de defensa.</p>
+    </div>
+    <div class="pain-col">
+      <h3>❌ Sin protección GPS…</h3>
+      <ul>
+        <li>
+          <div class="icon-x">✕</div>
+          No puedes localizar tu vehículo si te lo roban
+        </li>
+        <li>
+          <div class="icon-x">✕</div>
+          Pierdes tu herramienta de trabajo e ingresos
+        </li>
+        <li>
+          <div class="icon-x">✕</div>
+          Sin respuesta rápida, la recuperación es casi imposible
+        </li>
+      </ul>
+    </div>
+    <hr class="pain-divider">
+    <div class="pain-col" style="margin-bottom:0">
+      <h3>✅ Con Unidos por GPS…</h3>
+      <ul>
+        <li>
+          <div class="icon-check">✓</div>
+          Ubicación en tiempo real desde tu celular
+        </li>
+        <li>
+          <div class="icon-check">✓</div>
+          Apagado remoto del motor ante robo
+        </li>
+        <li>
+          <div class="icon-check">✓</div>
+          Alertas inteligentes 24/7 con equipo de respuesta
+        </li>
+        <li>
+          <div class="icon-check">✓</div>
+          Control total desde nuestra app propia
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="services" id="servicios">
+    <div class="section-heading">
+      <h2>Nuestros servicios GPS</h2>
+      <p>Soluciones para cada tipo de vehículo y necesidad</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img">📍 Imagen placeholder 16:9</div>
+        <div class="service-body">
+          <h3>GPS Vehicular Particular</h3>
+          <p>Protección para tu auto o moto con rastreo en tiempo real, alertas y apagado remoto.</p>
+          <a href="/servicios/gps-vehicular" class="service-link">Ver más →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img">🚛 Imagen placeholder 16:9</div>
+        <div class="service-body">
+          <h3>GPS para Flotas</h3>
+          <p>Panel de control para gestionar múltiples vehículos, reportes y alertas por zona.</p>
+          <a href="/servicios/gps-flotas" class="service-link">Ver más →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img">🎒 Imagen placeholder 16:9</div>
+        <div class="service-body">
+          <h3>Unidos Liberty</h3>
+          <p>GPS portátil sin instalación. Ideal para personas, niños, adultos mayores y paquetes.</p>
+          <a href="/servicios/unidos-liberty" class="service-link">Ver más →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img">📷 Imagen placeholder 16:9</div>
+        <div class="service-body">
+          <h3>Dashcam con IA</h3>
+          <p>Grabación continua con detección de incidentes por inteligencia artificial.</p>
+          <a href="/servicios/dashcam-ia" class="service-link">Ver más →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="howitworks">
+    <div class="section-heading">
+      <h2>Cómo funciona</h2>
+      <p>En 4 pasos tienes tu vehículo protegido</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-left">
+          <div class="step-circle">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3>Agenda la instalación</h3>
+          <p>Nuestros técnicos instalan el GPS de forma oculta en tu vehículo, sin afectar su funcionamiento.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-circle">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3>Descarga la app</h3>
+          <p>Accede a nuestra plataforma desde iOS o Android. Configuración lista en minutos.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-circle">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3>Monitorea en tiempo real</h3>
+          <p>Ve la ubicación exacta de tu vehículo y recibe alertas inteligentes las 24 horas.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left">
+          <div class="step-circle">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3>Actúa en caso de robo</h3>
+          <p>Apaga el motor remotamente y coordina con nuestro equipo de respuesta inmediata.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-heading">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <p>Miles de vehículos protegidos en todo el Perú</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar"></div>
+          <div class="testimonial-meta">
+            <strong>Carlos M.</strong>
+            <span>Propietario particular, Lima</span>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="placeholder-tag">[DATO REAL PENDIENTE]</div>
+        <p class="testimonial-text">"Testimonio real del cliente pendiente de recibir del cliente para incluir en esta sección."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar"></div>
+          <div class="testimonial-meta">
+            <strong>María R.</strong>
+            <span>Gestora de flota, Empresa Logística</span>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="placeholder-tag">[DATO REAL PENDIENTE]</div>
+        <p class="testimonial-text">"Testimonio real del cliente pendiente de recibir del cliente para incluir en esta sección."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <div class="avatar"></div>
+          <div class="testimonial-meta">
+            <strong>Jorge P.</strong>
+            <span>Taxista independiente, Miraflores</span>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="placeholder-tag">[DATO REAL PENDIENTE]</div>
+        <p class="testimonial-text">"Testimonio real del cliente pendiente de recibir del cliente para incluir en esta sección."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME CTA -->
+  <section class="homecta">
+    <h2>¿Listo para proteger tu vehículo?</h2>
+    <p>Más de 10 años cuidando lo que más importa. Instala hoy sin costo de equipo.</p>
+    <a href="https://wa.me/51933452214?text=Hola%2C%20quiero%20cotizar%20un%20GPS" class="btn btn-whatsapp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Escríbenos por WhatsApp ahora
+    </a>
+    <a href="tel:+51933452214" class="phone-link">📞 +51 933 452 214 — Emergencia 24/7</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <img src="../../public/images/logo-negativo.webp" alt="Unidos por GPS">
+    </div>
+    <p class="footer-tagline">Protección inteligente para tu vehículo. Monitoreo GPS 24/7 con tecnología de punta.</p>
+
+    <p class="footer-section-title">Servicios</p>
+    <ul class="footer-links">
+      <li><a href="/servicios/gps-vehicular">GPS Vehicular Particular</a></li>
+      <li><a href="/servicios/gps-flotas">GPS para Flotas</a></li>
+      <li><a href="/servicios/unidos-liberty">Unidos Liberty</a></li>
+      <li><a href="/servicios/dashcam-ia">Dashcam con IA</a></li>
+    </ul>
+
+    <p class="footer-section-title">Empresa</p>
+    <ul class="footer-links">
+      <li><a href="/nosotros">Quiénes somos</a></li>
+      <li><a href="/cotizar">Cotizar</a></li>
+      <li><a href="/politica-de-privacidad">Política de Privacidad</a></li>
+    </ul>
+
+    <p class="footer-section-title">Contacto</p>
+    <div class="footer-contact">
+      <a href="tel:+51933452214" class="contact-item">
+        <div class="contact-badge badge-emergency">📞</div>
+        <span>Emergencia 24/7 · +51 933 452 214</span>
+      </a>
+      <a href="https://wa.me/51933452214" class="contact-item">
+        <div class="contact-badge badge-whatsapp">💬</div>
+        <span>WhatsApp</span>
+      </a>
+      <a href="mailto:comercial@unidosporgps.pe" class="contact-item" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.875rem;">
+        comercial@unidosporgps.pe
+      </a>
+    </div>
+
+    <hr class="footer-divider">
+    <p class="footer-copyright">© 2025 Unidos por GPS. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/51933452214?text=Hola%2C%20quiero%20cotizar%20un%20GPS"
+     class="wa-float" target="_blank" rel="noopener noreferrer"
+     aria-label="Chatear por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+</body>
+</html>
