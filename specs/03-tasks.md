@@ -18,7 +18,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T01 — Extracción y documentación de marca
 - **Prioridad:** P0
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** —
 - **Descripción:** Analizar las imágenes en `design/referencia-actual/` y documentar la identidad visual de marca en `design/brand/brand.md`. Incluye: colores exactos (hex con cuentagotas sobre logo.png), escala de tints/shades, uso del logo (positivo/negativo), tipografía actual del sitio Odoo (si identificable), tono del copy. Este archivo es la fuente de verdad para todos los tokens de diseño.
 - **Archivos permitidos:**
