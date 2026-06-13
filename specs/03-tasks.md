@@ -124,7 +124,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T32 — Sistema de primitivos de UI
 - **Prioridad:** P0
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T03
 - **Descripción:** Construir los componentes primitivos de UI reutilizables que consumirán todas las secciones T07–T14: `Button` (variantes `primary`, `secondary`, `whatsapp`), `Container` (wrapper de ancho máximo con padding responsive), y `SectionHeading` (título + subtítulo de sección con jerarquía tipográfica). Instalar y configurar `lucide-react` como librería de íconos del proyecto. Ninguna sección de la Home debe recrear estos primitivos.
 - **Archivos permitidos:**
