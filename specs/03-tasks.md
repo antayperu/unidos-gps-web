@@ -108,7 +108,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T05 — Setup GitHub + Vercel + variables de entorno
 - **Prioridad:** P0
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T02
 - **Descripción:** Configurar el repositorio en GitHub (rama main como default), conectar con Vercel para preview deploys automáticos en PRs. Configurar las variables de entorno en el panel de Vercel (SUPABASE_SERVICE_ROLE_KEY, etc.). Verificar que el primer deploy de preview funciona.
 - **Archivos permitidos:**
