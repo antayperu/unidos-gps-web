@@ -592,7 +592,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T25 — Página Política de Privacidad
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T04
 - **Descripción:** Crear la página `/politica-de-privacidad` con el contenido legal de tratamiento de datos personales. Contenido generado como base legal según regulación peruana (Ley N° 29733). El cliente debe revisar y aprobar el texto antes del lanzamiento.
 - **Archivos permitidos:**
