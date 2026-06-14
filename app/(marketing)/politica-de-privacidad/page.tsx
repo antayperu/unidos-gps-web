@@ -2,13 +2,17 @@ import { Metadata } from 'next'
 import { contact } from '@/content/site'
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad | Unidos por GPS Perú',
-  description:
-    'Política de privacidad y tratamiento de datos personales de Unidos por GPS, conforme a la Ley N° 29733 de Protección de Datos Personales del Perú.',
+  title: 'Política de Privacidad',
+  description: 'Política de privacidad y tratamiento de datos personales de Unidos por GPS.',
   openGraph: {
-    title: 'Política de Privacidad | Unidos por GPS Perú',
-    description: 'Tratamiento de datos personales conforme a la Ley N° 29733.',
+    title: 'Política de Privacidad | Unidos por GPS',
+    description: 'Política de privacidad y tratamiento de datos personales de Unidos por GPS.',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Política de Privacidad | Unidos por GPS',
+    description: 'Política de privacidad y tratamiento de datos personales de Unidos por GPS.',
   },
 }
 

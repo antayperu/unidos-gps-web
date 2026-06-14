@@ -2,14 +2,17 @@ import { Metadata } from 'next'
 import QuoteForm from '@/components/ui/QuoteForm'
 
 export const metadata: Metadata = {
-  title: 'Cotiza tu GPS | Unidos por GPS Perú',
-  description:
-    'Solicita tu cotización de GPS vehicular. Respuesta en menos de 24 horas. Instalación gratuita, sin costo de equipo.',
+  title: 'Cotiza tu GPS — Contáctanos',
+  description: 'Solicita tu cotización gratuita de GPS vehicular. Respuesta en menos de 24 horas.',
   openGraph: {
-    title: 'Cotiza tu GPS | Unidos por GPS Perú',
-    description:
-      'Solicita tu cotización de GPS vehicular. Respuesta en menos de 24 horas. Instalación gratuita, sin costo de equipo.',
+    title: 'Cotiza tu GPS — Contáctanos | Unidos por GPS',
+    description: 'Solicita tu cotización gratuita de GPS vehicular. Respuesta en menos de 24 horas.',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cotiza tu GPS — Contáctanos | Unidos por GPS',
+    description: 'Solicita tu cotización gratuita de GPS vehicular. Respuesta en menos de 24 horas.',
   },
 }
 

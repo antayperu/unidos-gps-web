@@ -17,8 +17,21 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Unidos por GPS',
-  description: 'Protección inteligente para tu vehículo',
+  metadataBase: new URL('https://unidosporgps.pe'),
+  title: {
+    template: '%s | Unidos por GPS',
+    default: 'Unidos por GPS — Protección Vehicular con GPS en Perú',
+  },
+  description:
+    'Instala GPS en tu vehículo con instalación gratuita y oculta. Monitoreo 24/7, apagado remoto y app propia. Sin pago de equipo.',
+  openGraph: {
+    type: 'website',
+    locale: 'es_PE',
+    siteName: 'Unidos por GPS',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
 }
 
 export default function RootLayout({

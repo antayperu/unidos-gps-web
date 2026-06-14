@@ -39,14 +39,17 @@ const DIFFERENTIATORS = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Quiénes somos | Unidos por GPS Perú',
-  description:
-    'Más de 10 años protegiendo vehículos en el Perú. Instalación oculta y gratuita, app propia, sin pago de equipo. Conoce al equipo detrás de Unidos por GPS.',
+  title: { absolute: 'Quiénes Somos — Unidos por GPS' },
+  description: 'Más de 10 años protegiendo vehículos en Perú. Conoce al equipo de Unidos por GPS.',
   openGraph: {
-    title: 'Quiénes somos | Unidos por GPS Perú',
-    description:
-      'Empresa peruana de seguridad vehicular GPS con más de 10 años en el mercado.',
+    title: 'Quiénes Somos — Unidos por GPS',
+    description: 'Más de 10 años protegiendo vehículos en Perú. Conoce al equipo de Unidos por GPS.',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Quiénes Somos — Unidos por GPS',
+    description: 'Más de 10 años protegiendo vehículos en Perú. Conoce al equipo de Unidos por GPS.',
   },
 }
 

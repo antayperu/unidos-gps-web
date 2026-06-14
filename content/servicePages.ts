@@ -50,9 +50,9 @@ export const servicePages: ServicePageData[] = [
     ],
     waMessage: 'Hola%2C%20quiero%20cotizar%20el%20GPS%20Vehicular%20Particular',
     meta: {
-      title: 'GPS Vehicular Particular | Unidos por GPS Perú',
+      title: 'GPS Vehicular Particular — Rastreo en Tiempo Real',
       description:
-        'Rastreo GPS en tiempo real para tu auto o camioneta. Instalación gratuita y oculta. Apagado remoto del motor. App iOS y Android. Sin costo de equipo.',
+        'Protege tu vehículo particular con GPS de alta precisión. Instalación oculta gratuita, app iOS/Android y soporte 24/7.',
     },
   },
   {
@@ -87,9 +87,9 @@ export const servicePages: ServicePageData[] = [
     ],
     waMessage: 'Hola%2C%20quiero%20cotizar%20el%20GPS%20para%20Flotas',
     meta: {
-      title: 'GPS para Flotas Empresariales | Unidos por GPS Perú',
+      title: 'GPS para Flotas Empresariales — Control Total',
       description:
-        'Control de flota en tiempo real. Reportes, alertas de zona y soporte empresarial dedicado. Escala desde 1 hasta cientos de vehículos.',
+        'Gestiona tu flota con rastreo en tiempo real, reportes y alertas. Solución GPS para empresas en Perú.',
     },
   },
   {
@@ -124,9 +124,9 @@ export const servicePages: ServicePageData[] = [
     ],
     waMessage: 'Hola%2C%20quiero%20cotizar%20el%20Unidos%20Liberty',
     meta: {
-      title: 'Unidos Liberty — GPS Portátil | Unidos por GPS Perú',
+      title: 'Unidos Liberty — GPS Portátil para Personas y Objetos',
       description:
-        'GPS portátil sin instalación para personas, adultos mayores, niños y activos. Rastreo en tiempo real desde la app. Sin cables ni técnico.',
+        'Rastrea personas, niños, adultos mayores o paquetes con el GPS portátil Unidos Liberty. Sin instalación.',
     },
   },
   {
@@ -164,9 +164,9 @@ export const servicePages: ServicePageData[] = [
     ],
     waMessage: 'Hola%2C%20quiero%20cotizar%20la%20Dashcam%20con%20IA',
     meta: {
-      title: 'Dashcam con IA para Vehículos | Unidos por GPS Perú',
+      title: 'Dashcam con Inteligencia Artificial — Seguridad Vehicular',
       description:
-        'Cámara vehicular con inteligencia artificial. Grabación continua, detección de incidentes y evidencia en video. Protege tu vehículo y tus derechos.',
+        'Graba y protege tu vehículo con cámara Dashcam con IA. Detección de incidentes y grabación continua.',
     },
   },
 ]
