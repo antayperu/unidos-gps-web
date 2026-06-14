@@ -572,7 +572,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T35 — Analítica y tracking de conversión
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada — 2026-06-14 · @vercel/analytics · eventos lead_submitted y whatsapp_click · CSP connect-src actualizado
 - **Depende de:** T15, T24
 - **Descripción:** Integrar Vercel Analytics para métricas de tráfico y Core Web Vitals. Añadir eventos de conversión custom: submit exitoso del formulario de cotización (`lead_submitted`) y clics en el botón flotante de WhatsApp (`whatsapp_click`). Los eventos se implementan via `@vercel/analytics/react`.
 - **Archivos permitidos:**

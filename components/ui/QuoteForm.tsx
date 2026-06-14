@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { track } from '@vercel/analytics/react'
 import { CheckCircle, Loader2 } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import { contact } from '@/content/site'
@@ -92,6 +93,7 @@ export default function QuoteForm() {
       const json = await res.json()
 
       if (json.ok) {
+        track('lead_submitted')
         setFormState('success')
         return
       }

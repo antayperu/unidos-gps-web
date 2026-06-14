@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
+import { track } from '@vercel/analytics/react'
 import { contact } from '@/content/site'
 
 const WA_FLOAT_HREF = `${contact.whatsappHref}?text=Hola%2C%20quiero%20cotizar%20un%20GPS`
@@ -14,6 +15,7 @@ export default function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chatear por WhatsApp"
+      onClick={() => track('whatsapp_click')}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
