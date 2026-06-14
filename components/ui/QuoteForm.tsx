@@ -244,6 +244,7 @@ export default function QuoteForm() {
             id="q-vehicles"
             type="number"
             min={1}
+            defaultValue={1}
             aria-describedby={errors.vehicles ? 'q-vehicles-error' : undefined}
             aria-invalid={errors.vehicles ? 'true' : undefined}
             disabled={isLoading}
