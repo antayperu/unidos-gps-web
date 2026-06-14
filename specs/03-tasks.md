@@ -681,7 +681,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T30 — Lighthouse audit y optimización final
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada — 2026-06-13 · Scores: Performance 99 / Accessibility 96 / Best Practices 100 / SEO 100 · LCP 2.3s / CLS 0 / TBT 0ms
 - **Depende de:** T15, T26, T27, T28, T29
 - **Descripción:** Ejecutar Lighthouse en el deploy de Vercel (no localhost). Identificar y corregir todos los issues hasta alcanzar ≥95 en Performance, Accessibility, Best Practices y SEO. Verificar Core Web Vitals: LCP < 2.5s, CLS < 0.1, INP < 200ms.
 - **Archivos permitidos:**
@@ -700,7 +700,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T31 — Deploy a producción y smoke test
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada — 2026-06-13 · Sitio en https://unidos-gps-web.vercel.app · Formulario → Supabase verificado · Dominio unidosporgps.pe pendiente (cliente debe configurar DNS)
 - **Depende de:** T30
 - **Descripción:** Configurar el dominio de producción en Vercel (unidosporgps.pe o subdominio). Ejecutar smoke test manual de las rutas críticas: Home, páginas de servicio, formulario de cotización (envío real), WhatsApp float.
 - **Archivos permitidos:**

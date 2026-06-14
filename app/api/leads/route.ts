@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { createServerClient } from '@/lib/supabase-server'
 import { leadSchema } from '@/lib/validations'
+import { sendLeadEmail } from '@/lib/email'
 
 export const runtime = 'nodejs'
 
@@ -102,6 +103,9 @@ export async function POST(request: NextRequest) {
       { status: 500 },
     )
   }
+
+  // Fire-and-forget — lead is already saved, email failure is not critical
+  void sendLeadEmail(lead).catch((err) => console.error('Lead email failed', err))
 
   return NextResponse.json({ ok: true }, { status: 200 })
 }
