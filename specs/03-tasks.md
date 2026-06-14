@@ -534,7 +534,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T24 — Integración formulario ↔ API route ↔ Supabase
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T21, T23, T34
 - **Descripción:** Conectar el `QuoteForm` (T21) con la API route (T23). Manejar todos los estados de respuesta en el cliente: loading, success (con opción de ir a WhatsApp), error de validación (mostrar errores en campos), error de servidor (mensaje genérico).
 - **Archivos permitidos:**

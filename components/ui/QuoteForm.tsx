@@ -67,18 +67,47 @@ function Field({
 
 export default function QuoteForm() {
   const [formState, setFormState] = useState<FormState>('idle')
+  const [serverError, setServerError] = useState<string | null>(null)
 
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm<FormData>()
 
-  const onSubmit = async () => {
+  const onSubmit = async (data: FormData) => {
     setFormState('loading')
-    // T24 will replace this with: await fetch('/api/leads', { method: 'POST', body: JSON.stringify(_data) })
-    await new Promise((r) => setTimeout(r, 1500))
-    setFormState('success')
+    setServerError(null)
+
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      const json = await res.json()
+
+      if (json.ok) {
+        setFormState('success')
+        return
+      }
+
+      if (json.errors) {
+        Object.entries(json.errors as Record<string, string[]>).forEach(([field, msgs]) => {
+          setError(field as keyof FormData, { message: msgs[0] })
+        })
+        setFormState('idle')
+        return
+      }
+
+      setServerError(json.message ?? 'Ocurrió un error al enviar. Intenta de nuevo.')
+      setFormState('error')
+    } catch {
+      setServerError('No pudimos conectar con el servidor. Intenta de nuevo.')
+      setFormState('error')
+    }
   }
 
   if (formState === 'success') {
@@ -230,9 +259,9 @@ export default function QuoteForm() {
         />
       </Field>
 
-      {formState === 'error' && (
+      {formState === 'error' && serverError && (
         <p role="alert" className="text-sm text-error text-center">
-          Ocurrió un error al enviar. Intenta de nuevo o escríbenos por WhatsApp.
+          {serverError}
         </p>
       )}
 
