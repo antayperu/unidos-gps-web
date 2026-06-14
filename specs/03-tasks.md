@@ -608,7 +608,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T26 — Metadata SEO por página
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T15, T16, T17, T18, T19, T20, T21, T25
 - **Descripción:** Implementar la Metadata API de Next.js en cada `page.tsx` con los valores de `specs/02-design.md §3.6`: `title`, `description`, Open Graph, Twitter Card. Usar `generateMetadata()` donde el contenido sea dinámico.
 - **Archivos permitidos:**
@@ -629,7 +629,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T27 — sitemap.xml + robots.txt
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T26
 - **Descripción:** Crear `app/sitemap.ts` que genere automáticamente el sitemap con las 8 URLs del sitio. Crear `app/robots.ts` que permita indexación general y apunte al sitemap.
 - **Archivos permitidos:**
@@ -645,7 +645,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T28 — Schema.org (Structured Data)
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T26
 - **Descripción:** Crear el componente `StructuredData` que renderiza JSON-LD. Implementar `LocalBusiness` en la Home y `Service` en cada página de servicio.
 - **Archivos permitidos:**
@@ -663,7 +663,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T29 — Security headers en next.config.ts
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T02
 - **Descripción:** Agregar los security headers HTTP en `next.config.ts`: `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, y un Content Security Policy básico que permita Google Fonts, Google Analytics (si aplica) y Supabase.
 - **Archivos permitidos:**
