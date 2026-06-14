@@ -21,3 +21,6 @@ create policy "service_role_insert_only"
   for insert
   to service_role
   with check (true);
+
+-- service_role needs explicit SELECT for dedup check (bypasses RLS but not table grants)
+grant select, insert on public.leads to service_role;
