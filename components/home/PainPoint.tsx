@@ -109,7 +109,7 @@ export default function PainPoint() {
                 >
                   <CheckCircle
                     size={22}
-                    className="text-whatsapp flex-shrink-0 mt-0.5"
+                    className="text-brand-primary-300 flex-shrink-0 mt-0.5"
                     aria-hidden="true"
                   />
                   {solution}

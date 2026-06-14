@@ -27,7 +27,9 @@ Esta guía describe exactamente qué imágenes necesitan reemplazarse, dónde de
 
 **Componente:** [components/home/Hero.tsx](../components/home/Hero.tsx)
 
-**Cómo se usa:** Foto en tarjeta redondeada en la **columna derecha** del hero, con aspecto 4:3 y `object-cover`. **Solo visible en pantallas ≥ 1024 px** (`hidden lg:block`). En móvil y tablet el hero muestra solo el texto sobre el gradiente navy — eso es intencional. La foto mide 480 px de ancho en el layout desktop.
+**Cómo se usa:** Foto con dos comportamientos según breakpoint:
+- **Mobile / tablet (< 1024 px):** Imagen de fondo a pantalla completa con overlay navy al 70% (`bg-brand-primary-900/70`), texto y CTAs encima. `object-cover object-center`.
+- **Desktop (≥ 1024 px):** Tarjeta redondeada en la columna derecha del hero, aspecto 4:3, `object-cover`. La foto mide 480 px de ancho en el layout desktop.
 
 **Resolución mínima:** 960 × 720 px (aspecto 4:3)  
 **Aspecto:** 4:3 — no 16:9. Una foto cuadrada o ligeramente apaisada funciona mejor.  
@@ -108,6 +110,51 @@ Esta guía describe exactamente qué imágenes necesitan reemplazarse, dónde de
 | `logo-negativo.webp` | `public/images/logo-negativo.webp` | Footer |
 
 Estos se copiaron desde `design/referencia-actual/` en T04 y son los logos reales de la marca. Solo reemplazar si el cliente actualiza su identidad visual.
+
+---
+
+## Logos de entidades homologadoras — `public/images/logos/`
+
+**Componente:** [components/ui/HomologatorCard.tsx](../components/ui/HomologatorCard.tsx)  
+**Usado en:** [app/(marketing)/nosotros/page.tsx](../app/(marketing)/nosotros/page.tsx) — sección "Homologados por"
+
+### Archivos requeridos
+
+| # | Archivo | Carpeta destino | Entidad completa |
+|---|---|---|---|
+| 1 | `mtc.png` | `public/images/logos/` | Ministerio de Transportes y Comunicaciones |
+| 2 | `osiptel.png` | `public/images/logos/` | Organismo Supervisor de Inversión Privada en Telecomunicaciones |
+| 3 | `sutran.png` | `public/images/logos/` | Superintendencia de Transporte Terrestre de Personas, Carga y Mercancías |
+| 4 | `osinergmin.png` | `public/images/logos/` | Organismo Supervisor de la Inversión en Energía y Minería |
+
+### Especificaciones técnicas
+
+**Formato recomendado: PNG con fondo transparente**
+- Los logos institucionales peruanos suelen incluir texto + símbolo. PNG preserva la transparencia, lo que permite que se vean bien sobre el fondo blanco de la tarjeta.
+- **No usar JPG** — no soporta transparencia; los logos quedarían con fondo blanco cuadrado que choca visualmente.
+- **WebP con transparencia** también funciona — el componente acepta cualquier formato que el browser soporte.
+- **SVG** es el formato ideal si la entidad lo provee. En ese caso cámbia la extensión en `HOMOLOGATORS` dentro de `nosotros/page.tsx` (un cambio de línea por logo).
+
+**Resolución mínima:** Usa el archivo oficial de la entidad (suelen ser de alta resolución). El componente renderiza el logo en un contenedor de `64 px de alto × ancho de la tarjeta` con `object-contain` — cualquier logo ≥ 200 × 80 px se verá nítido en Retina.
+
+**Zona segura:** El logo se centra automáticamente con `object-contain`. No se recorta — el aspecto completo es siempre visible.
+
+### Cómo conseguirlos
+
+- **MTC:** mtc.gob.pe → sección "Prensa" o "Identidad institucional"
+- **OSIPTEL:** osiptel.gob.pe → "Acerca de OSIPTEL" → "Imagen institucional"
+- **SUTRAN:** sutran.gob.pe → sección de descargas / prensa
+- **OSINERGMIN:** osinergmin.gob.pe → "Comunicaciones" → "Imagen institucional"
+- Alternativa: solicitar directamente al área de comunicaciones de cada entidad.
+
+### Proceso de reemplazo
+
+1. Descarga el logo oficial (PNG con transparencia) de cada entidad.
+2. Renombra exactamente como indica la tabla: `mtc.png`, `osiptel.png`, etc.
+3. Crea la carpeta `public/images/logos/` si no existe y coloca los archivos ahí.
+4. Ejecuta `npm run dev` — los logos aparecen automáticamente. **Sin cambios de código.**
+5. Verifica a 360 px, 768 px y 1280 px que los logos se vean proporcionales y centrados.
+6. Haz commit y push → Vercel despliega.
 
 ---
 

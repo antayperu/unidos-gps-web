@@ -10,6 +10,8 @@ const WhatsAppIcon = () => (
   </svg>
 )
 
+
+
 type Props = { data: ServicePageData }
 
 export default function ServicePage({ data }: Props) {
@@ -37,25 +39,25 @@ export default function ServicePage({ data }: Props) {
               {data.description}
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button variant="whatsapp" href={waHref}>
+              <Button variant="inverse" href="/cotizar">
+                Cotizar ahora
+              </Button>
+              <Button variant="ghost" href={waHref}>
                 <WhatsAppIcon />
                 Escríbenos por WhatsApp
-              </Button>
-              <Button variant="ghost" href="/cotizar">
-                Cotizar ahora
               </Button>
             </div>
           </div>
 
-          {/* Imagen — solo desktop */}
-          <div className="hidden lg:block relative rounded-2xl overflow-hidden aspect-[4/3]">
+          {/* Imagen — visible en todos los breakpoints */}
+          <div className="mt-8 lg:mt-0 relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-primary-100">
             <Image
               src={data.image}
               alt={`${data.title} — Unidos por GPS`}
               fill
               priority
               className="object-cover"
-              sizes="560px"
+              sizes="(max-width: 1023px) 100vw, 560px"
             />
           </div>
 
@@ -75,7 +77,7 @@ export default function ServicePage({ data }: Props) {
             {data.features.map((f, i) => (
               <div key={i} className="flex gap-4 bg-white rounded-xl p-5 shadow-sm">
                 <CheckCircle
-                  className="w-5 h-5 text-whatsapp flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 text-brand-primary-600 flex-shrink-0 mt-0.5"
                   aria-hidden="true"
                 />
                 <div>
@@ -105,12 +107,12 @@ export default function ServicePage({ data }: Props) {
             Instalación gratuita · Sin costo de equipo · Respuesta en minutos
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <Button variant="inverse" href="/cotizar">
+              Cotizar ahora
+            </Button>
             <Button variant="whatsapp" href={waHref}>
               <WhatsAppIcon />
               Escríbenos por WhatsApp
-            </Button>
-            <Button variant="ghost" href="/cotizar">
-              Ver formulario de cotización
             </Button>
           </div>
         </div>

@@ -716,6 +716,30 @@ _Versión 1.0 — 2026-06-11_
 
 ---
 
+## T37 — Recalibración visual corporativa
+- **Prioridad:** P2
+- **Estado:** ✅ Completado — 2026-06-14 · Variante `inverse` en Button · hero móvil con imagen de fondo + overlay navy 70% · CTAs navy en todo el sitio · verde solo en WhatsAppFloat · valores Nosotros con íconos 2×2 · imagen de servicio visible en mobile · HomologatorCard con placeholder para logos MTC/OSIPTEL/SUTRAN/OSINERGMIN
+- **Depende de:** T04, T07, T16, T20, T32
+- **Descripción:** Corregir tres problemas que hacen el sitio menos corporativo: (1) recalibrar jerarquía de CTAs — añadir variante `inverse` (botón blanco) en Button; navy/blanco como acción primaria en secciones oscuras; verde WhatsApp solo en float y un secundario en páginas de servicio; (2) reemplazar píldoras de texto de valores en Nosotros por grid 2×2 con íconos lucide-react (Shield, Clock, Lightbulb, Award); (3) mostrar imagen de servicio en mobile en páginas /servicios/* quitando `hidden lg:block`.
+- **Archivos permitidos:**
+  - `components/ui/Button.tsx` (añadir variante `inverse`)
+  - `components/home/Hero.tsx`
+  - `components/home/HomeCTA.tsx`
+  - `components/home/PainPoint.tsx`
+  - `components/services/ServicePage.tsx`
+  - `app/(marketing)/nosotros/page.tsx`
+- **Criterios de aceptación:**
+  - El único CTA verde fuera del float es el "Escríbenos por WhatsApp" secundario en páginas de servicio.
+  - Todos los CTAs primarios en secciones oscuras usan `variant="inverse"` (botón blanco `bg-white text-brand-primary-800`).
+  - `CheckCircle` en `ServicePage` y `PainPoint` usan color navy de marca (no verde).
+  - Los 4 valores de Nosotros muestran ícono + texto en grid 2×2, sin píldoras.
+  - En /servicios/* la imagen de servicio es visible a 360px (debajo de los CTAs, fondo `bg-brand-primary-100` como placeholder).
+  - Sin scroll horizontal a 360/768/1280px.
+  - `npm run build` y `npm run lint` pasan sin errores.
+- **Verificación:** `npm run build && npm run lint` + inspección visual en 360/768/1280px + auditoría verde (`#25D366` solo en float y secundario de servicio)
+
+---
+
 ## Bloqueantes de contenido del cliente
 
 > Estos ítems son datos reales que el cliente debe proveer antes de que el sitio pueda lanzarse a producción. Están marcados como `[DATO REAL PENDIENTE]` en el código fuente. Reunir esta información en paralelo con el desarrollo.
