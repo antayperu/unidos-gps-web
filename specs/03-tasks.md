@@ -718,7 +718,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T37 — Recalibración visual corporativa
 - **Prioridad:** P2
-- **Estado:** ✅ Completado — 2026-06-14 · Variante `inverse` en Button · hero móvil con imagen de fondo + overlay navy 70% · CTAs navy en todo el sitio · verde solo en WhatsAppFloat · valores Nosotros con íconos 2×2 · imagen de servicio visible en mobile · HomologatorCard con placeholder para logos MTC/OSIPTEL/SUTRAN/OSINERGMIN
+- **Estado:** ✅ Completado — 2026-06-14 · Variante `inverse` en Button · hero móvil con imagen de fondo + overlay navy 70% · CTAs navy en todo el sitio · verde solo en WhatsAppFloat · valores Nosotros con íconos 2×2 · imagen de servicio visible en mobile · HomologatorCard: logos reales MTC/OSIPTEL/SUTRAN/OSINERGMIN h-24 sin texto redundante (alt preservado)
 - **Depende de:** T04, T07, T16, T20, T32
 - **Descripción:** Corregir tres problemas que hacen el sitio menos corporativo: (1) recalibrar jerarquía de CTAs — añadir variante `inverse` (botón blanco) en Button; navy/blanco como acción primaria en secciones oscuras; verde WhatsApp solo en float y un secundario en páginas de servicio; (2) reemplazar píldoras de texto de valores en Nosotros por grid 2×2 con íconos lucide-react (Shield, Clock, Lightbulb, Award); (3) mostrar imagen de servicio en mobile en páginas /servicios/* quitando `hidden lg:block`.
 - **Archivos permitidos:**

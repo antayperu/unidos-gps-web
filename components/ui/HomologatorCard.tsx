@@ -12,9 +12,10 @@ export default function HomologatorCard({ name, src, alt }: HomologatorCardProps
   const [failed, setFailed] = useState(false)
 
   return (
-    <div className="bg-white rounded-xl py-5 px-4 shadow-sm flex flex-col items-center gap-3 min-h-[120px] justify-center">
+    <div className="bg-white rounded-xl py-5 px-5 shadow-sm flex items-center justify-center min-h-[128px]">
       {!failed ? (
-        <div className="relative w-full h-16">
+        // Logo cargado: solo imagen, sin texto redundante. alt preserva accesibilidad.
+        <div className="relative w-full h-24">
           <Image
             src={src}
             alt={alt}
@@ -25,16 +26,15 @@ export default function HomologatorCard({ name, src, alt }: HomologatorCardProps
           />
         </div>
       ) : (
+        // Fallback: logo no disponible — muestra nombre de entidad como identificación
         <div
-          className="w-full h-16 bg-brand-primary-50 rounded-lg flex items-center justify-center"
+          className="w-full h-24 bg-brand-primary-50 rounded-lg flex flex-col items-center justify-center gap-1"
           aria-hidden="true"
         >
           <span className="font-body text-brand-primary-300 text-xs">Logo pendiente</span>
+          <span className="font-heading font-bold text-brand-primary-600 text-sm tracking-wide">{name}</span>
         </div>
       )}
-      <span className="font-heading font-bold text-brand-primary-700 text-sm tracking-wide">
-        {name}
-      </span>
     </div>
   )
 }
