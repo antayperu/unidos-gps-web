@@ -172,6 +172,8 @@ export default function NosotrosPage() {
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-flex items-center bg-brand-primary-100 text-brand-primary-800 font-body font-medium text-xs px-3 py-1.5 rounded-full">Seguridad</span>
                   <span className="inline-flex items-center bg-brand-primary-100 text-brand-primary-800 font-body font-medium text-xs px-3 py-1.5 rounded-full">Disponibilidad 24/7</span>
+                  <span className="inline-flex items-center bg-brand-primary-100 text-brand-primary-800 font-body font-medium text-xs px-3 py-1.5 rounded-full">Innovación</span>
+                  <span className="inline-flex items-center bg-brand-primary-100 text-brand-primary-800 font-body font-medium text-xs px-3 py-1.5 rounded-full">Honestidad</span>
                 </div>
               </div>
             </div>

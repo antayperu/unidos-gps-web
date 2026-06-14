@@ -31,7 +31,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   name: 'Unidos por GPS',
   description:
-    'Empresa peruana de seguridad vehicular GPS con más de 10 años en el mercado. Instalación oculta gratuita, app propia iOS/Android, sin pago de equipo.',
+    'Empresa peruana de seguridad vehicular GPS con más de 13 años en el mercado. Instalación oculta gratuita, app propia iOS/Android, sin pago de equipo.',
   url: 'https://unidosporgps.pe',
   telephone: '+51933452214',
   email: 'comercial@unidosporgps.pe',

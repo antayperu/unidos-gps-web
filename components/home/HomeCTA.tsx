@@ -58,7 +58,7 @@ export default function HomeCTA() {
             variants={item}
             className="font-body text-base lg:text-lg text-white/75 leading-relaxed mb-10 lg:mb-12"
           >
-            Más de 10 años cuidando lo que más importa.{' '}
+            Más de 13 años cuidando lo que más importa.{' '}
             <br className="hidden sm:block" />
             Instala hoy sin costo de equipo.
           </motion.p>

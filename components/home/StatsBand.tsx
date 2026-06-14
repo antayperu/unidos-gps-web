@@ -11,7 +11,7 @@ type Stat = {
 }
 
 const STATS: Stat[] = [
-  { countTo: 10, prefix: '+', label: 'Años de experiencia' },
+  { countTo: 13, prefix: '+', label: 'Años de experiencia' },
   { display: '24/7', label: 'Monitoreo activo' },
   { display: 'App', label: 'iOS y Android propia' },
   { display: '$0', label: 'Pago de equipo' },

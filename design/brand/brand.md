@@ -124,7 +124,7 @@ El texto "UNIDOS POR GPS" en el logo utiliza una tipografía **no disponible en 
 Basado en el análisis del sitio actual de Odoo:
 
 - **Directo y orientado a la acción:** "Protección inteligente para tu vehículo", "Protege tu vehículo hoy"
-- **Confianza por experiencia:** "+10 años de experiencia", "Monitoreo 24/7", "App propia"
+- **Confianza por experiencia:** "+13 años de experiencia", "Monitoreo 24/7", "App propia"
 - **Propuesta de valor clara:** "Sin pago de equipo" como diferenciador
 - **Urgencia sin alarmar:** "Emergencia 24/7" como servicio, no como miedo
 - **Trato cercano:** segunda persona singular ("tu vehículo", "escríbenos")

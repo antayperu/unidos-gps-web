@@ -71,7 +71,7 @@ export default function Hero() {
               className="font-body text-white/80 leading-relaxed text-[0.9375rem] lg:text-lg max-w-xs mx-auto lg:max-w-xl lg:mx-0 mb-8 lg:mb-10"
             >
               Monitoreo GPS 24/7 con instalación oculta y app propia. Sin pago de equipo.
-              Más de 10 años protegiendo lo que más importa.
+              Más de 13 años protegiendo lo que más importa.
             </motion.p>
 
             {/* CTAs */}

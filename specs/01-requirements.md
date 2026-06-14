@@ -112,7 +112,7 @@ Todas las páginas deben ser indexables (no `noindex`) excepto las que se defina
 > **Política de datos:** PROHIBIDO inventar cifras, testimonios o logos de clientes. Usar solo información real proporcionada por el cliente. Donde falten datos, usar `[DATO REAL PENDIENTE]` visible en el código y en placeholder UI.
 
 **Sección de cifras (stats confirmadas en el sitio actual):**
-- "+10 años de experiencia"
+- "+13 años de experiencia"
 - "Monitoreo 24/7"
 - "App propia"
 - "Sin pago de equipo"
@@ -141,7 +141,7 @@ Los siguientes contenidos del sitio en Odoo deben rescatarse y elevarse en la nu
 ### 5.2 Banda de Stats (4 ítems confirmados)
 | Stat | Valor confirmado |
 |---|---|
-| Experiencia | +10 años de experiencia |
+| Experiencia | +13 años de experiencia |
 | Monitoreo | 24/7 |
 | App | App propia (iOS y Android) |
 | Costo de equipo | Sin pago de equipo |

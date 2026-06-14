@@ -396,7 +396,7 @@ La API route usa el `SUPABASE_SERVICE_ROLE_KEY` para insertar. Nunca expone el e
 | GPS Flotas | `GPS para Flotas Empresariales — Control Total \| Unidos por GPS` | `Gestiona tu flota con rastreo en tiempo real, reportes y alertas. Solución GPS para empresas en Perú.` |
 | Unidos Liberty | `Unidos Liberty — GPS Portátil para Personas y Objetos \| Unidos por GPS` | `Rastrea personas, niños, adultos mayores o paquetes con el GPS portátil Unidos Liberty. Sin instalación.` |
 | Dashcam IA | `Dashcam con Inteligencia Artificial — Seguridad Vehicular \| Unidos por GPS` | `Graba y protege tu vehículo con cámara Dashcam con IA. Detección de incidentes y grabación continua.` |
-| Nosotros | `Quiénes Somos — Unidos por GPS` | `Más de 10 años protegiendo vehículos en Perú. Conoce al equipo de Unidos por GPS.` |
+| Nosotros | `Quiénes Somos — Unidos por GPS` | `Más de 13 años protegiendo vehículos en Perú. Empresa homologada por MTC, OSIPTEL, SUTRAN y OSINERGMIN.` |
 | Cotizar | `Cotiza tu GPS — Contáctanos \| Unidos por GPS` | `Solicita tu cotización gratuita de GPS vehicular. Respuesta en menos de 24 horas.` |
 | Privacidad | `Política de Privacidad \| Unidos por GPS` | `Política de privacidad y tratamiento de datos personales de Unidos por GPS.` |
 
