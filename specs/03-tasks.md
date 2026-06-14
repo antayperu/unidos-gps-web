@@ -516,7 +516,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T34 — Anti-spam: honeypot + protección del formulario
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T21, T23
 - **Descripción:** Agregar protección anti-spam al formulario de cotización. Implementar: (1) campo honeypot oculto en `QuoteForm` que, si viene relleno, descarta el submit silenciosamente sin alertar al bot; (2) validación del honeypot en la API route con respuesta falsa 200 (no exponer la detección). La integración con Cloudflare Turnstile se deja documentada como opcional a activar si el volumen de spam lo justifica.
 - **Archivos permitidos:**

@@ -17,6 +17,7 @@ interface FormData {
   service: string
   vehicles: number
   message: string
+  website?: string
 }
 
 const inputBase =
@@ -105,6 +106,16 @@ export default function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
+
+      {/* Honeypot anti-spam — invisible to humans, attractive to bots */}
+      <input
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] top-0 h-0 w-0 overflow-hidden opacity-0 pointer-events-none"
+        {...register('website')}
+      />
 
       <Field id="q-name" label="Nombre completo" error={errors.name?.message} required>
         <input

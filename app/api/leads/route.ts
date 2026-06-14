@@ -1,5 +1,6 @@
 import { createHash } from 'crypto'
 import { NextRequest, NextResponse } from 'next/server'
+import { z } from 'zod'
 import { createServerClient } from '@/lib/supabase-server'
 import { leadSchema } from '@/lib/validations'
 
@@ -30,10 +31,16 @@ export async function POST(request: NextRequest) {
     )
   }
 
+  // Honeypot check — bots fill hidden fields, humans don't
+  const raw = payload as Record<string, unknown>
+  if (typeof raw.website === 'string' && raw.website.length > 0) {
+    return NextResponse.json({ ok: true }, { status: 200 })
+  }
+
   const parsed = leadSchema.safeParse(payload)
 
   if (!parsed.success) {
-    const fieldErrors = parsed.error.flatten().fieldErrors
+    const fieldErrors = z.flattenError(parsed.error).fieldErrors
 
     return NextResponse.json(
       {
