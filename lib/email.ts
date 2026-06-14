@@ -76,8 +76,8 @@ export async function sendLeadEmail(lead: LeadInput): Promise<{ ok: boolean; err
   try {
     const resend = new Resend(apiKey)
     const { error } = await resend.emails.send({
-      from: 'Unidos por GPS <noreply@unidosporgps.pe>',
-      to: ['comercial@unidosporgps.pe'],
+      from: 'onboarding@resend.dev',
+      to: [process.env.LEAD_NOTIFICATION_EMAIL ?? 'comercial@unidosporgps.pe'], // [CAMBIAR EN PRODUCCIÓN]
       subject: `Nuevo lead — ${lead.name} (${SERVICE_LABELS[lead.service] ?? lead.service})`,
       html: buildEmailHtml(lead),
     })
