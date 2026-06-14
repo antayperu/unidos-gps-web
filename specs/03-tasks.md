@@ -497,7 +497,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T23 — API route POST /api/leads
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada
 - **Depende de:** T22
 - **Descripción:** Crear la API route `app/api/leads/route.ts`. Valida el body con Zod, verifica dedup de 60 segundos, inserta en Supabase usando el cliente server-side, retorna respuestas apropiadas (200/400/429/500).
 - **Archivos permitidos:**
