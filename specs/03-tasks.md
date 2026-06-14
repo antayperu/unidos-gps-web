@@ -552,7 +552,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T33 — Notificación por email de lead nuevo
 - **Prioridad:** P3
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada — 2026-06-14 · lib/email.ts + Resend SDK · fire-and-forget no-bloqueante · FROM onboarding@resend.dev · TO desde LEAD_NOTIFICATION_EMAIL env var
 - **Depende de:** T23
 - **Descripción:** Implementar notificación automática por email a `comercial@unidosporgps.pe` cada vez que se inserta un nuevo lead válido en Supabase. Implementar via Resend (API de email transaccional) llamado desde la API route `/api/leads` después de la inserción exitosa. El email debe incluir todos los datos del lead. Si el envío de email falla, el lead se guarda igualmente (error no bloqueante).
 - **Archivos permitidos:**
