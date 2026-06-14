@@ -441,7 +441,7 @@ _Versión 1.0 — 2026-06-11_
 
 ## T20 — Página Nosotros
 - **Prioridad:** P3
-- **Estado:** ✅ Completado — 2026-06-13
+- **Estado:** ✅ Completado — 2026-06-13 · Contenido real incorporado 2026-06-14 (misión, visión, valores, historia, homologaciones MTC/OSIPTEL/SUTRAN/OSINERGMIN; años actualizados 10→13)
 - **Depende de:** T04
 - **Descripción:** Crear la página `/nosotros` con historia de la empresa, valores, equipo y diferenciadores. Contenido `[DATO REAL PENDIENTE]` donde no haya información confirmada. CTA de cotización al final.
 - **Archivos permitidos:**
@@ -449,7 +449,7 @@ _Versión 1.0 — 2026-06-11_
 - **Criterios de aceptación:**
   - Página accesible en `/nosotros`.
   - Correcta a 360/768/1280px.
-  - Los diferenciadores de la marca (+10 años, instalación oculta, app propia, sin pago de equipo) están presentes.
+  - Los diferenciadores de la marca (+13 años, instalación oculta, app propia, sin pago de equipo) están presentes.
   - `npm run build` pasa.
 - **Verificación:** `npm run dev` + navegación + inspección 360/768/1280px
 
@@ -756,13 +756,15 @@ Por cada servicio (GPS Vehicular, GPS Flotas, Unidos Liberty, Dashcam IA):
 - Precio o rango de precio (si se va a publicar)
 - Diferenciadores vs. la competencia
 
-### Datos corporativos para Nosotros (T20)
+### Datos corporativos para Nosotros (T20) — PARCIALMENTE RESUELTO 2026-06-14
 
-- Año de fundación
-- Historia de la empresa (2–3 párrafos)
-- Misión y visión (si existen formalmente)
-- Nombres y cargos del equipo (para sección de equipo, si se decide incluir)
-- Certificaciones, partnerships o reconocimientos relevantes
+- ~~Historia de la empresa (2–3 párrafos)~~ ✅ incorporado
+- ~~Misión y visión~~ ✅ incorporado
+- ~~Valores~~ ✅ Seguridad + Disponibilidad 24/7
+- ~~Homologaciones~~ ✅ MTC, OSIPTEL, SUTRAN, OSINERGMIN
+- Año de fundación exacto — pendiente (se usa "más de 13 años")
+- Nombres y cargos del equipo — pendiente (foto del equipo o instalaciones aún es placeholder)
+- Foto del equipo / instalaciones — pendiente (imagen real del cliente)
 
 ### Presencia digital
 

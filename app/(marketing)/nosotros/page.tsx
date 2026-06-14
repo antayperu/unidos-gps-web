@@ -14,9 +14,9 @@ const WhatsAppIcon = () => (
 const DIFFERENTIATORS = [
   {
     icon: ShieldCheck,
-    title: '+10 años en el mercado',
+    title: '+13 años en el mercado',
     description:
-      'Desde nuestros inicios hemos protegido miles de vehículos en todo el Perú con tecnología GPS de última generación.',
+      'Desde nuestros inicios hemos protegido miles de vehículos en todo el Perú con cobertura nacional e internacional y tecnología GPS de última generación.',
   },
   {
     icon: EyeOff,
@@ -40,16 +40,16 @@ const DIFFERENTIATORS = [
 
 export const metadata: Metadata = {
   title: { absolute: 'Quiénes Somos — Unidos por GPS' },
-  description: 'Más de 10 años protegiendo vehículos en Perú. Conoce al equipo de Unidos por GPS.',
+  description: 'Más de 13 años protegiendo vehículos en Perú. Empresa homologada por MTC, OSIPTEL, SUTRAN y OSINERGMIN.',
   openGraph: {
     title: 'Quiénes Somos — Unidos por GPS',
-    description: 'Más de 10 años protegiendo vehículos en Perú. Conoce al equipo de Unidos por GPS.',
+    description: 'Más de 13 años protegiendo vehículos en Perú. Empresa homologada por MTC, OSIPTEL, SUTRAN y OSINERGMIN.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Quiénes Somos — Unidos por GPS',
-    description: 'Más de 10 años protegiendo vehículos en Perú. Conoce al equipo de Unidos por GPS.',
+    description: 'Más de 13 años protegiendo vehículos en Perú. Empresa homologada por MTC, OSIPTEL, SUTRAN y OSINERGMIN.',
   },
 }
 
@@ -67,14 +67,13 @@ export default function NosotrosPage() {
             Quiénes somos
           </h1>
           <p className="font-body text-white/85 text-base lg:text-lg leading-relaxed mb-4">
-            Empresa peruana con más de 10 años protegiendo vehículos particulares y flotas
+            Empresa peruana con más de 13 años protegiendo vehículos particulares y flotas
             empresariales.
           </p>
-          {/* [DATO REAL PENDIENTE] — reemplazar con misión formal del cliente */}
           <p className="font-body text-white/65 text-sm lg:text-base leading-relaxed max-w-2xl mb-8 lg:mb-10">
-            Nacimos con una misión clara: hacer que la tecnología GPS sea accesible, confiable y
-            efectiva para cada peruano. Hoy somos referentes en seguridad vehicular con presencia
-            en Lima y principales ciudades del país.
+            Proporcionar soluciones de seguimiento y monitoreo satelital innovadoras y confiables para
+            vehículos y flotas, garantizando la seguridad, eficiencia y productividad de nuestros
+            clientes, y contribuyendo al desarrollo de un transporte más seguro y sostenible.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button variant="whatsapp" href={WA_NOSOTROS_HREF}>
@@ -133,20 +132,48 @@ export default function NosotrosPage() {
             <h2 className="font-heading text-2xl lg:text-3xl font-bold text-brand-primary-900 mb-6">
               Nuestra historia
             </h2>
-            {/* [DATO REAL PENDIENTE] — reemplazar con historia real del cliente */}
             <div className="space-y-4 font-body text-neutral-600 leading-relaxed text-sm lg:text-base">
               <p>
-                Unidos por GPS nació de la necesidad de proteger lo que más importa. Más de una
-                década después, seguimos siendo la opción de confianza para propietarios de
-                vehículos particulares y empresas con flotas en todo el Perú.
+                Somos una empresa peruana con más de 13 años de experiencia en monitoreo satelital
+                vehicular GPS en tiempo real, con cobertura nacional e internacional. Nos destacamos
+                por nuestra constante innovación y actualización tecnológica, lo que nos permite
+                ofrecer soluciones personalizadas y efectivas para satisfacer las necesidades
+                específicas de nuestros clientes.
               </p>
-              <p className="italic text-neutral-400 text-xs">
-                [DATO REAL PENDIENTE — historia fundacional, año de inicio, motivación del equipo
-                fundador, primeros clientes e hitos clave.]
+              <p>
+                Nuestro equipo profesional y técnico está comprometido con brindar tranquilidad y
+                confianza a nuestros clientes, gracias a nuestra amplia experiencia en el rubro y
+                nuestra dedicación a la excelencia. Ofrecemos las mejores soluciones en tecnología
+                satelital para todo tipo de vehículos, garantizando un servicio de alta calidad y
+                confiabilidad.
               </p>
-              <p className="italic text-neutral-400 text-xs">
-                [DATO REAL PENDIENTE — misión, visión y valores corporativos formales.]
-              </p>
+            </div>
+
+            {/* Misión / Visión / Valores */}
+            <div className="mt-8 space-y-4">
+              <div className="bg-brand-primary-50 rounded-xl p-5">
+                <p className="font-heading font-bold text-brand-primary-900 text-sm uppercase tracking-wide mb-1">Misión</p>
+                <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                  Proporcionar soluciones de seguimiento y monitoreo satelital innovadoras y confiables
+                  para vehículos y flotas, garantizando la seguridad, eficiencia y productividad de
+                  nuestros clientes, y contribuyendo al desarrollo de un transporte más seguro y sostenible.
+                </p>
+              </div>
+              <div className="bg-brand-primary-50 rounded-xl p-5">
+                <p className="font-heading font-bold text-brand-primary-900 text-sm uppercase tracking-wide mb-1">Visión</p>
+                <p className="font-body text-sm text-neutral-600 leading-relaxed">
+                  Ser reconocidos como la empresa líder en telemetría y seguridad vehicular, destacando
+                  por nuestra excelencia operativa y la confianza de miles de usuarios conectados a
+                  nuestra plataforma.
+                </p>
+              </div>
+              <div className="bg-brand-primary-50 rounded-xl p-5">
+                <p className="font-heading font-bold text-brand-primary-900 text-sm uppercase tracking-wide mb-2">Valores</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-flex items-center bg-brand-primary-100 text-brand-primary-800 font-body font-medium text-xs px-3 py-1.5 rounded-full">Seguridad</span>
+                  <span className="inline-flex items-center bg-brand-primary-100 text-brand-primary-800 font-body font-medium text-xs px-3 py-1.5 rounded-full">Disponibilidad 24/7</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -164,6 +191,26 @@ export default function NosotrosPage() {
         </div>
       </section>
 
+      {/* ── Homologaciones ── */}
+      <section aria-label="Homologaciones" className="bg-neutral-50 py-16 px-5 lg:py-20 lg:px-10">
+        <div className="max-w-[1200px] mx-auto text-center">
+          <h2 className="font-heading text-2xl lg:text-3xl font-bold text-brand-primary-900 mb-3">
+            Homologados por
+          </h2>
+          <p className="font-body text-neutral-500 text-sm lg:text-base mb-10 max-w-xl mx-auto">
+            Cumplimos con los estándares exigidos por los principales organismos reguladores del
+            transporte en Perú.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {(['MTC', 'OSIPTEL', 'SUTRAN', 'OSINERGMIN'] as const).map((org) => (
+              <div key={org} className="bg-white rounded-xl py-6 px-4 shadow-sm flex items-center justify-center">
+                <span className="font-heading font-bold text-brand-primary-700 text-lg tracking-wide">{org}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA band ── */}
       <section
         aria-label="Cotiza tu GPS"
@@ -174,7 +221,7 @@ export default function NosotrosPage() {
             ¿Listo para proteger tu vehículo?
           </h2>
           <p className="font-body text-white/70 text-sm lg:text-base leading-relaxed mb-8">
-            Instalación gratuita · Sin costo de equipo · Más de 10 años de experiencia
+            Instalación gratuita · Sin costo de equipo · Más de 13 años de experiencia
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Button variant="whatsapp" href={WA_NOSOTROS_HREF}>
