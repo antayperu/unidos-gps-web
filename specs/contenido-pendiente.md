@@ -27,11 +27,11 @@ Esta guía describe exactamente qué imágenes necesitan reemplazarse, dónde de
 
 **Componente:** [components/home/Hero.tsx](../components/home/Hero.tsx)
 
-**Cómo se usa:** Imagen de fondo full-width que ocupa el 100% del viewport. Se muestra con `object-cover` (recorta para cubrir el área) y tiene un overlay de gradiente navy encima. El texto blanco del hero queda sobre ella.
+**Cómo se usa:** Foto en tarjeta redondeada en la **columna derecha** del hero, con aspecto 4:3 y `object-cover`. **Solo visible en pantallas ≥ 1024 px** (`hidden lg:block`). En móvil y tablet el hero muestra solo el texto sobre el gradiente navy — eso es intencional. La foto mide 480 px de ancho en el layout desktop.
 
-**Resolución mínima:** 1920 × 1080 px  
-**Aspecto:** 16:9 o más ancho (panorámica)  
-**Zona segura:** El centro de la imagen es lo que más se ve en móvil. Evitar elementos importantes en los extremos izquierdo/derecho que puedan quedar cortados en pantallas estrechas.
+**Resolución mínima:** 960 × 720 px (aspecto 4:3)  
+**Aspecto:** 4:3 — no 16:9. Una foto cuadrada o ligeramente apaisada funciona mejor.  
+**Zona segura:** El centro de la imagen es lo que más se ve. Evitar elementos importantes en los bordes.
 
 **Sugerencia de contenido:** Vehículo moderno (auto o camioneta) con GPS instalado, ciudad nocturna de Lima, o flota de vehículos. Tonos oscuros son ideales porque el overlay ya oscurece la imagen, pero no es obligatorio.
 
