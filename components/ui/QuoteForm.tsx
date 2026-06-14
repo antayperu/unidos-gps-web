@@ -73,8 +73,10 @@ export default function QuoteForm() {
     register,
     handleSubmit,
     setError,
+    setValue,
+    getValues,
     formState: { errors, isSubmitting },
-  } = useForm<FormData>()
+  } = useForm<FormData>({ defaultValues: { vehicles: 1 } })
 
   const onSubmit = async (data: FormData) => {
     setFormState('loading')
@@ -226,21 +228,44 @@ export default function QuoteForm() {
         error={errors.vehicles?.message}
         required
       >
-        <input
-          id="q-vehicles"
-          type="number"
-          min={1}
-          placeholder="1"
-          aria-describedby={errors.vehicles ? 'q-vehicles-error' : undefined}
-          aria-invalid={errors.vehicles ? 'true' : undefined}
-          disabled={isLoading}
-          className={ic(!!errors.vehicles)}
-          {...register('vehicles', {
-            required: 'Indica el número de vehículos',
-            min: { value: 1, message: 'Mínimo 1 vehículo' },
-            valueAsNumber: true,
-          })}
-        />
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setValue('vehicles', Math.max(1, (getValues('vehicles') || 1) - 1), { shouldValidate: true })}
+            disabled={isLoading}
+            aria-label="Reducir número de vehículos"
+            className="flex items-center justify-center w-11 h-11 flex-shrink-0 rounded-lg border border-neutral-300
+                       text-lg text-neutral-600 bg-white hover:bg-neutral-50
+                       transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            −
+          </button>
+          <input
+            id="q-vehicles"
+            type="number"
+            min={1}
+            aria-describedby={errors.vehicles ? 'q-vehicles-error' : undefined}
+            aria-invalid={errors.vehicles ? 'true' : undefined}
+            disabled={isLoading}
+            className={`${ic(!!errors.vehicles)} text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none`}
+            {...register('vehicles', {
+              required: 'Indica el número de vehículos',
+              min: { value: 1, message: 'Mínimo 1 vehículo' },
+              valueAsNumber: true,
+            })}
+          />
+          <button
+            type="button"
+            onClick={() => setValue('vehicles', (getValues('vehicles') || 0) + 1, { shouldValidate: true })}
+            disabled={isLoading}
+            aria-label="Aumentar número de vehículos"
+            className="flex items-center justify-center w-11 h-11 flex-shrink-0 rounded-lg border border-neutral-300
+                       text-lg text-neutral-600 bg-white hover:bg-neutral-50
+                       transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            +
+          </button>
+        </div>
       </Field>
 
       <Field id="q-message" label="Mensaje adicional (opcional)" error={errors.message?.message}>
