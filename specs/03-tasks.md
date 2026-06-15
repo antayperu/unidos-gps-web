@@ -740,6 +740,23 @@ _Versión 1.0 — 2026-06-11_
 
 ---
 
+## T38 — Imágenes reales + placeholders resueltos
+- **Prioridad:** P1
+- **Estado:** ✅ Completado — 2026-06-14 · 5 fotos reales integradas · redes sociales con URLs reales · marcador [DATO REAL PENDIENTE] eliminado de dashcam-ia
+- **Depende de:** T37
+- **Descripción:** Commit de las 5 imágenes reales entregadas por el cliente (4 servicios + foto del equipo Nosotros). Corrección de dos placeholders visibles en producción: (1) links Facebook/Instagram estaban como `#` — reemplazados con URLs reales; (2) feature de Dashcam IA tenía marcador literal `[DATO REAL PENDIENTE]` en el texto visible — eliminado.
+- **Archivos modificados:**
+  - `public/images/nosotros-equipo.webp` (nuevo)
+  - `public/images/services/gps-vehicular.webp` (reemplazado)
+  - `public/images/services/gps-flotas.webp` (reemplazado)
+  - `public/images/services/unidos-liberty.webp` (reemplazado)
+  - `public/images/services/dashcam-ia.webp` (reemplazado)
+  - `content/site.ts` (social.facebook y social.instagram con URLs reales)
+  - `content/servicePages.ts` (eliminado marcador en dashcam feature)
+  - `app/(marketing)/nosotros/page.tsx` (Image component para foto del equipo)
+
+---
+
 ## Bloqueantes de contenido del cliente
 
 > Estos ítems son datos reales que el cliente debe proveer antes de que el sitio pueda lanzarse a producción. Están marcados como `[DATO REAL PENDIENTE]` en el código fuente. Reunir esta información en paralelo con el desarrollo.
@@ -748,12 +765,12 @@ _Versión 1.0 — 2026-06-11_
 
 | Ítem | Usado en | Especificación técnica |
 |---|---|---|
-| Imagen hero principal | T07 — `hero-bg.webp` | Fotografía de alta resolución (mín. 1920×1080px). Tema: vehículo protegido, ciudad nocturna o GPS instalado. Formato WebP o JPG. |
-| Imagen servicio GPS Vehicular | T10, T16 | Relación de aspecto 16:9, mín. 800×450px |
-| Imagen servicio GPS Flotas | T10, T17 | Relación de aspecto 16:9, mín. 800×450px |
-| Imagen servicio Unidos Liberty | T10, T18 | Relación de aspecto 16:9, mín. 800×450px |
-| Imagen servicio Dashcam IA | T10, T19 | Relación de aspecto 16:9, mín. 800×450px |
-| Fotos de equipo (opcional) | T20 — Nosotros | Formato cuadrado o 3:4, mín. 400×400px por persona |
+| Imagen hero principal | T07 — `hero-bg.webp` | ✅ Integrada — 2026-06-14 |
+| Imagen servicio GPS Vehicular | T10, T16 | ✅ Integrada — 2026-06-14 |
+| Imagen servicio GPS Flotas | T10, T17 | ✅ Integrada — 2026-06-14 |
+| Imagen servicio Unidos Liberty | T10, T18 | ✅ Integrada — 2026-06-14 |
+| Imagen servicio Dashcam IA | T10, T19 | ✅ Integrada — 2026-06-14 |
+| Foto del equipo / instalaciones | T20 — Nosotros | ✅ Integrada — 2026-06-14 (`nosotros-equipo.webp`) |
 
 ### Cifras para StatsBand (T08)
 
@@ -787,13 +804,12 @@ Por cada servicio (GPS Vehicular, GPS Flotas, Unidos Liberty, Dashcam IA):
 - ~~Valores~~ ✅ Seguridad + Disponibilidad 24/7
 - ~~Homologaciones~~ ✅ MTC, OSIPTEL, SUTRAN, OSINERGMIN
 - Año de fundación exacto — pendiente (se usa "más de 13 años")
-- Nombres y cargos del equipo — pendiente (foto del equipo o instalaciones aún es placeholder)
-- Foto del equipo / instalaciones — pendiente (imagen real del cliente)
+- ~~Foto del equipo / instalaciones~~ ✅ integrada 2026-06-14
 
 ### Presencia digital
 
-- URL de Facebook (si existe)
-- URL de Instagram (si existe)
+- ~~URL de Facebook~~ ✅ `facebook.com/unidosporgps` — integrada 2026-06-14
+- ~~URL de Instagram~~ ✅ `instagram.com/unidosporgps` — integrada 2026-06-14
 - URL de LinkedIn (si existe)
 - URL de YouTube / TikTok (si existe)
 - Google Business Profile (para Schema.org LocalBusiness en T28)
