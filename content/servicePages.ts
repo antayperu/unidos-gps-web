@@ -156,10 +156,9 @@ export const servicePages: ServicePageData[] = [
         detail: 'Video fechado y georreferenciado, válido como prueba ante autoridades.',
       },
       {
-        // [DATO REAL PENDIENTE]
         label: 'Conectividad y almacenamiento en la nube',
         detail:
-          'Accede a tus grabaciones desde la app en cualquier momento y lugar. [DATO REAL PENDIENTE]',
+          'Accede a tus grabaciones desde la app en cualquier momento y lugar.',
       },
     ],
     waMessage: 'Hola%2C%20quiero%20cotizar%20la%20Dashcam%20con%20IA',

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { ShieldCheck, EyeOff, Smartphone, BadgeDollarSign, Shield, Clock, Lightbulb, Award } from 'lucide-react'
+import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import HomologatorCard from '@/components/ui/HomologatorCard'
 import { contact } from '@/content/site'
@@ -187,15 +188,15 @@ export default function NosotrosPage() {
             </div>
           </div>
 
-          {/* Placeholder visual */}
-          <div
-            className="bg-brand-primary-50 rounded-2xl aspect-[4/3] flex items-center justify-center"
-            aria-hidden="true"
-          >
-            <p className="font-body text-sm text-brand-primary-300 text-center px-6">
-              {/* [DATO REAL PENDIENTE — foto del equipo o instalaciones] */}
-              Foto del equipo<br />o instalaciones
-            </p>
+          {/* Foto del equipo / instalaciones */}
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-primary-50">
+            <Image
+              src="/images/nosotros-equipo.webp"
+              alt="Equipo de Unidos por GPS"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1023px) 100vw, 560px"
+            />
           </div>
 
         </div>

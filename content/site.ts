@@ -20,6 +20,6 @@ export const contact = {
 }
 
 export const social = {
-  facebook: '#',   // [DATO REAL PENDIENTE]
-  instagram: '#',  // [DATO REAL PENDIENTE]
+  facebook: 'https://www.facebook.com/unidosporgps',
+  instagram: 'https://www.instagram.com/unidosporgps/?hl=es',
 }
