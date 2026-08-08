@@ -122,7 +122,7 @@ _Versión 2.0 — 2026-08-08_
 
 ## T43 — Schema Sanity: Página Nosotros
 - **Prioridad:** P4
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completada — 2026-08-08
 - **Depende de:** T39
 - **Descripción:** Definir un documento singleton `nosotros` en Sanity con los campos: foto del equipo, texto de historia, misión, visión, valores (lista con ícono y texto), y año de fundación. Conectar la página `/nosotros` para leer desde Sanity los textos corporativos y la foto del equipo. **Nota importante:** Los logos de homologadoras (MTC, OSIPTEL, SUTRAN, OSINERGMIN) son un schema separado definido en T44 — este singleton solo gestiona textos corporativos y foto del equipo.
 - **Archivos permitidos:**
