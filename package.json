@@ -9,16 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/image-url": "^2.1.1",
     "@supabase/supabase-js": "^2.108.1",
     "@vercel/analytics": "^2.0.1",
     "docx": "^9.7.1",
     "framer-motion": "11.18.2",
     "lucide-react": "^1.18.0",
     "next": "^15.0.0",
+    "next-sanity": "^11.6.13",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.79.0",
     "resend": "^6.12.4",
+    "sanity": "^6.9.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {

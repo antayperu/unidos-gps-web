@@ -16,9 +16,9 @@ const securityHeaders = [
       "default-src 'self'",
       `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob:",
-      "font-src 'self'",
-      `connect-src 'self' https://va.vercel-scripts.com${isDev ? ' ws: wss:' : ''}`,
+      "img-src 'self' data: blob: https://cdn.sanity.io",
+      "font-src 'self' https://cdn.sanity.io",
+      `connect-src 'self' https://va.vercel-scripts.com https://api.sanity.io https://cdn.sanity.io wss://*.sanity.io${isDev ? ' ws: wss:' : ''}`,
       "frame-ancestors 'none'",
       "object-src 'none'",
       "base-uri 'self'",
@@ -26,14 +26,30 @@ const securityHeaders = [
   },
 ]
 
+// El panel de Sanity Studio es una herramienta interna — usa CSP más permisiva
+const studioHeaders = [
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+]
+
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+    ],
   },
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: '/studio/:path*',
+        headers: studioHeaders,
+      },
+      {
+        source: '/((?!studio).*)',
         headers: securityHeaders,
       },
     ]
