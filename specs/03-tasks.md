@@ -1,6 +1,9 @@
 # Backlog de Tareas — Unidos por GPS Web
 _Versión 1.0 — 2026-06-11_
 
+> **Cierre de Fase:** Todas las tareas T01–T38 completadas. El código fue etiquetado como **`v1.0`** en GitHub el 2026-08-08 — punto de retorno seguro disponible en cualquier momento.
+> La continuación del proyecto se gestiona en **`specs/04-cms.md`** (Fase 4 — CMS con Sanity, tareas T39–T47).
+
 > **Uso:** Este archivo es el backlog vivo. Actualizar el estado de cada tarea inmediatamente tras completarla o rechazarla. Una sola tarea en estado 🟨 a la vez. Toda ejecución en Plan Mode con aprobación humana antes de escribir archivos.
 
 **Estados:**
