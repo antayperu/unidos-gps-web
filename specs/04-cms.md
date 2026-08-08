@@ -141,7 +141,7 @@ _Versión 2.0 — 2026-08-08_
 
 ## T44 — Schema Sanity: Logos de homologadoras
 - **Prioridad:** P4
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completada — 2026-08-08
 - **Depende de:** T39
 - **Descripción:** Definir el tipo de documento `homologator` en Sanity con los campos: nombre de la entidad, logo (imagen con transparencia) y orden de aparición. Conectar el componente `HomologatorCard` y la sección correspondiente en la página `/nosotros` para leer desde Sanity. El equipo comercial podrá subir los logos pendientes de MTC, OSIPTEL y SUTRAN directamente desde Studio, sin necesidad de un desarrollador.
 - **Archivos permitidos:**
