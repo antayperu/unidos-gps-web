@@ -103,7 +103,7 @@ _Versión 2.0 — 2026-08-08_
 
 ## T42 — Schema Sanity: Estadísticas (StatsBand)
 - **Prioridad:** P4
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completada — 2026-08-08
 - **Depende de:** T39
 - **Descripción:** Definir un documento singleton `stats` en Sanity (solo existe uno, no se pueden crear múltiples) con los 4 campos de estadísticas: valor numérico, etiqueta descriptiva y sufijo (ej. "+", "%"). Conectar el componente `StatsBand` para leer desde Sanity. Cuando el cliente consiga las cifras reales, el equipo comercial las actualiza directamente en Studio sin necesidad de un desarrollador.
 - **Archivos permitidos:**
