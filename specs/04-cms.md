@@ -84,7 +84,7 @@ _Versión 2.0 — 2026-08-08_
 
 ## T41 — Schema Sanity: Testimonios
 - **Prioridad:** P4
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada — 2026-08-08 · schema testimonial.ts creado · TestimonialCard y Testimonials leen desde Sanity · foto opcional con urlFor · build pasa
 - **Depende de:** T39
 - **Descripción:** Definir el tipo de documento `testimonial` en Sanity con los campos: nombre del cliente, tipo de cliente (particular / flota), texto del testimonio, foto (opcional) y orden de aparición. Conectar el componente `Testimonials` para leer desde Sanity. El equipo comercial podrá agregar, editar y reordenar testimonios sin tocar código.
 - **Archivos permitidos:**

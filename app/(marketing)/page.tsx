@@ -7,7 +7,7 @@ import ServicesPreview from '@/components/home/ServicesPreview'
 import HowItWorks from '@/components/home/HowItWorks'
 import Testimonials from '@/components/home/Testimonials'
 import HomeCTA from '@/components/home/HomeCTA'
-import { getAllServices } from '@/lib/sanity.queries'
+import { getAllServices, getAllTestimonials } from '@/lib/sanity.queries'
 
 export const metadata: Metadata = {
   title: { absolute: 'Unidos por GPS — Protección Vehicular con GPS en Perú' },
@@ -49,7 +49,10 @@ const localBusinessSchema = {
 }
 
 export default async function HomePage() {
-  const services = await getAllServices()
+  const [services, testimonials] = await Promise.all([
+    getAllServices(),
+    getAllTestimonials(),
+  ])
 
   return (
     <>
@@ -59,7 +62,7 @@ export default async function HomePage() {
       <PainPoint />
       <ServicesPreview services={services} />
       <HowItWorks />
-      <Testimonials />
+      <Testimonials testimonials={testimonials} />
       <HomeCTA />
     </>
   )

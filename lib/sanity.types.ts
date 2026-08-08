@@ -1,4 +1,4 @@
-// Tipos de documentos de Sanity — se amplían en T41–T44
+// Tipos de documentos de Sanity — se amplían en T42–T44
 
 export interface SanityImageAsset {
   _type: 'image'
@@ -11,6 +11,18 @@ export interface SanityImageAsset {
 export interface ServiceFeature {
   label: string
   detail: string
+}
+
+export interface SanityTestimonial {
+  _id: string
+  name: string
+  initials: string
+  role: string
+  location: string
+  rating: number
+  quote: string
+  photo: SanityImageAsset | null
+  order: number
 }
 
 export interface SanityService {

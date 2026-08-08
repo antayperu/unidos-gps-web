@@ -1,17 +1,33 @@
-import { Testimonial } from '@/content/testimonials'
+import Image from 'next/image'
+import type { SanityTestimonial } from '@/lib/sanity.types'
+import { urlFor } from '@/lib/sanity.image'
 
-type Props = { testimonial: Testimonial }
+type Props = { testimonial: SanityTestimonial }
 
 export default function TestimonialCard({ testimonial }: Props) {
+  const photoUrl = testimonial.photo
+    ? urlFor(testimonial.photo).width(112).height(112).url()
+    : null
+
   return (
     <article className="bg-neutral-50 rounded-2xl p-6 lg:p-8 shadow-sm flex flex-col gap-5 hover:shadow-elevated hover:-translate-y-1 transition-all duration-200">
 
       {/* Avatar + meta */}
       <div className="flex items-center gap-4">
-        <div className="w-14 h-14 rounded-full bg-brand-primary-700 flex items-center justify-center flex-shrink-0">
-          <span className="font-heading font-bold text-white text-base leading-none">
-            {testimonial.initials}
-          </span>
+        <div className="w-14 h-14 rounded-full bg-brand-primary-700 flex items-center justify-center flex-shrink-0 overflow-hidden">
+          {photoUrl ? (
+            <Image
+              src={photoUrl}
+              alt={testimonial.name}
+              width={56}
+              height={56}
+              className="object-cover w-full h-full"
+            />
+          ) : (
+            <span className="font-heading font-bold text-white text-base leading-none">
+              {testimonial.initials}
+            </span>
+          )}
         </div>
         <div>
           <p className="font-heading font-bold text-brand-primary-900 text-sm leading-snug">

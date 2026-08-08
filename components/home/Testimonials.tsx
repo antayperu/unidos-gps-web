@@ -2,9 +2,13 @@
 
 import { motion, useReducedMotion } from 'framer-motion'
 import TestimonialCard from '@/components/ui/TestimonialCard'
-import { testimonials } from '@/content/testimonials'
+import type { SanityTestimonial } from '@/lib/sanity.types'
 
-export default function Testimonials() {
+type Props = {
+  testimonials: SanityTestimonial[]
+}
+
+export default function Testimonials({ testimonials }: Props) {
   const prefersReduced = useReducedMotion() ?? false
 
   const container = {
@@ -57,7 +61,7 @@ export default function Testimonials() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7"
         >
           {testimonials.map((t) => (
-            <motion.div key={t.slug} variants={item}>
+            <motion.div key={t._id} variants={item}>
               <TestimonialCard testimonial={t} />
             </motion.div>
           ))}
