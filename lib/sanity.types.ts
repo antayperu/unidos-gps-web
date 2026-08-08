@@ -37,6 +37,22 @@ export interface SanityStats {
   items: StatItem[]
 }
 
+export interface SanityValue {
+  label: string
+}
+
+export interface SanityNosotros {
+  _id: string
+  heroIntro: string
+  historyParagraph1: string
+  historyParagraph2: string
+  mission: string
+  vision: string
+  foundingYear: number
+  values: SanityValue[]
+  teamPhoto: SanityImageAsset | null
+}
+
 export interface SanityService {
   _id: string
   title: string

@@ -4,13 +4,10 @@ import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import HomologatorCard from '@/components/ui/HomologatorCard'
 import { contact } from '@/content/site'
+import { getNosotros } from '@/lib/sanity.queries'
+import { urlFor } from '@/lib/sanity.image'
 
-const VALUES = [
-  { icon: Shield,    label: 'Seguridad' },
-  { icon: Clock,     label: 'Disponibilidad 24/7' },
-  { icon: Lightbulb, label: 'Innovación' },
-  { icon: Award,     label: 'Honestidad' },
-]
+const VALUE_ICONS = [Shield, Clock, Lightbulb, Award]
 
 const HOMOLOGATORS = [
   { id: 'mtc',        name: 'MTC',        src: '/images/logos/mtc.png',        alt: 'Ministerio de Transportes y Comunicaciones' },
@@ -46,6 +43,26 @@ const DIFFERENTIATORS = [
   },
 ]
 
+const FALLBACK = {
+  heroIntro: 'Empresa peruana con más de 13 años protegiendo vehículos particulares y flotas empresariales.',
+  heroMissionStatement:
+    'Proporcionar soluciones de seguimiento y monitoreo satelital innovadoras y confiables para vehículos y flotas, garantizando la seguridad, eficiencia y productividad de nuestros clientes, y contribuyendo al desarrollo de un transporte más seguro y sostenible.',
+  historyParagraph1:
+    'Somos una empresa peruana con más de 13 años de experiencia en monitoreo satelital vehicular GPS en tiempo real, con cobertura nacional e internacional. Nos destacamos por nuestra constante innovación y actualización tecnológica, lo que nos permite ofrecer soluciones personalizadas y efectivas para satisfacer las necesidades específicas de nuestros clientes.',
+  historyParagraph2:
+    'Nuestro equipo profesional y técnico está comprometido con brindar tranquilidad y confianza a nuestros clientes, gracias a nuestra amplia experiencia en el rubro y nuestra dedicación a la excelencia. Ofrecemos las mejores soluciones en tecnología satelital para todo tipo de vehículos, garantizando un servicio de alta calidad y confiabilidad.',
+  mission:
+    'Proporcionar soluciones de seguimiento y monitoreo satelital innovadoras y confiables para vehículos y flotas, garantizando la seguridad, eficiencia y productividad de nuestros clientes, y contribuyendo al desarrollo de un transporte más seguro y sostenible.',
+  vision:
+    'Ser reconocidos como la empresa líder en telemetría y seguridad vehicular, destacando por nuestra excelencia operativa y la confianza de miles de usuarios conectados a nuestra plataforma.',
+  values: [
+    { label: 'Seguridad' },
+    { label: 'Disponibilidad 24/7' },
+    { label: 'Innovación' },
+    { label: 'Honestidad' },
+  ],
+}
+
 export const metadata: Metadata = {
   title: { absolute: 'Quiénes Somos — Unidos por GPS' },
   description: 'Más de 13 años protegiendo vehículos en Perú. Empresa homologada por MTC, OSIPTEL, SUTRAN y OSINERGMIN.',
@@ -61,7 +78,20 @@ export const metadata: Metadata = {
   },
 }
 
-export default function NosotrosPage() {
+export default async function NosotrosPage() {
+  const nosotros = await getNosotros()
+
+  const heroIntro = nosotros?.heroIntro ?? FALLBACK.heroIntro
+  const historyParagraph1 = nosotros?.historyParagraph1 ?? FALLBACK.historyParagraph1
+  const historyParagraph2 = nosotros?.historyParagraph2 ?? FALLBACK.historyParagraph2
+  const mission = nosotros?.mission ?? FALLBACK.mission
+  const vision = nosotros?.vision ?? FALLBACK.vision
+  const values = nosotros?.values ?? FALLBACK.values
+
+  const teamPhotoUrl = nosotros?.teamPhoto
+    ? urlFor(nosotros.teamPhoto).width(1120).height(840).url()
+    : null
+
   return (
     <article>
 
@@ -75,13 +105,10 @@ export default function NosotrosPage() {
             Quiénes somos
           </h1>
           <p className="font-body text-white/85 text-base lg:text-lg leading-relaxed mb-4">
-            Empresa peruana con más de 13 años protegiendo vehículos particulares y flotas
-            empresariales.
+            {heroIntro}
           </p>
           <p className="font-body text-white/65 text-sm lg:text-base leading-relaxed max-w-2xl mb-8 lg:mb-10">
-            Proporcionar soluciones de seguimiento y monitoreo satelital innovadoras y confiables para
-            vehículos y flotas, garantizando la seguridad, eficiencia y productividad de nuestros
-            clientes, y contribuyendo al desarrollo de un transporte más seguro y sostenible.
+            {mission}
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button variant="inverse" href="/cotizar">
@@ -140,49 +167,32 @@ export default function NosotrosPage() {
               Nuestra historia
             </h2>
             <div className="space-y-4 font-body text-neutral-600 leading-relaxed text-sm lg:text-base">
-              <p>
-                Somos una empresa peruana con más de 13 años de experiencia en monitoreo satelital
-                vehicular GPS en tiempo real, con cobertura nacional e internacional. Nos destacamos
-                por nuestra constante innovación y actualización tecnológica, lo que nos permite
-                ofrecer soluciones personalizadas y efectivas para satisfacer las necesidades
-                específicas de nuestros clientes.
-              </p>
-              <p>
-                Nuestro equipo profesional y técnico está comprometido con brindar tranquilidad y
-                confianza a nuestros clientes, gracias a nuestra amplia experiencia en el rubro y
-                nuestra dedicación a la excelencia. Ofrecemos las mejores soluciones en tecnología
-                satelital para todo tipo de vehículos, garantizando un servicio de alta calidad y
-                confiabilidad.
-              </p>
+              <p>{historyParagraph1}</p>
+              <p>{historyParagraph2}</p>
             </div>
 
             {/* Misión / Visión / Valores */}
             <div className="mt-8 space-y-4">
               <div className="bg-brand-primary-50 rounded-xl p-5">
                 <p className="font-heading font-bold text-brand-primary-900 text-sm uppercase tracking-wide mb-1">Misión</p>
-                <p className="font-body text-sm text-neutral-600 leading-relaxed">
-                  Proporcionar soluciones de seguimiento y monitoreo satelital innovadoras y confiables
-                  para vehículos y flotas, garantizando la seguridad, eficiencia y productividad de
-                  nuestros clientes, y contribuyendo al desarrollo de un transporte más seguro y sostenible.
-                </p>
+                <p className="font-body text-sm text-neutral-600 leading-relaxed">{mission}</p>
               </div>
               <div className="bg-brand-primary-50 rounded-xl p-5">
                 <p className="font-heading font-bold text-brand-primary-900 text-sm uppercase tracking-wide mb-1">Visión</p>
-                <p className="font-body text-sm text-neutral-600 leading-relaxed">
-                  Ser reconocidos como la empresa líder en telemetría y seguridad vehicular, destacando
-                  por nuestra excelencia operativa y la confianza de miles de usuarios conectados a
-                  nuestra plataforma.
-                </p>
+                <p className="font-body text-sm text-neutral-600 leading-relaxed">{vision}</p>
               </div>
               <div className="bg-brand-primary-50 rounded-xl p-5">
                 <p className="font-heading font-bold text-brand-primary-900 text-sm uppercase tracking-wide mb-3">Valores</p>
                 <div className="grid grid-cols-2 gap-3">
-                  {VALUES.map(({ icon: Icon, label }) => (
-                    <div key={label} className="flex items-center gap-3 bg-white rounded-xl p-3 shadow-sm">
-                      <Icon className="w-5 h-5 text-brand-primary-600 flex-shrink-0" aria-hidden="true" />
-                      <span className="font-body font-semibold text-brand-primary-900 text-sm">{label}</span>
-                    </div>
-                  ))}
+                  {values.map(({ label }, i) => {
+                    const Icon = VALUE_ICONS[i % VALUE_ICONS.length]
+                    return (
+                      <div key={label} className="flex items-center gap-3 bg-white rounded-xl p-3 shadow-sm">
+                        <Icon className="w-5 h-5 text-brand-primary-600 flex-shrink-0" aria-hidden="true" />
+                        <span className="font-body font-semibold text-brand-primary-900 text-sm">{label}</span>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>
@@ -191,7 +201,7 @@ export default function NosotrosPage() {
           {/* Foto del equipo / instalaciones */}
           <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-primary-50">
             <Image
-              src="/images/nosotros-equipo.webp"
+              src={teamPhotoUrl ?? '/images/nosotros-equipo.webp'}
               alt="Equipo de Unidos por GPS"
               fill
               className="object-cover"
