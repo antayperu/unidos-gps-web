@@ -7,6 +7,7 @@ import ServicesPreview from '@/components/home/ServicesPreview'
 import HowItWorks from '@/components/home/HowItWorks'
 import Testimonials from '@/components/home/Testimonials'
 import HomeCTA from '@/components/home/HomeCTA'
+import { getAllServices } from '@/lib/sanity.queries'
 
 export const metadata: Metadata = {
   title: { absolute: 'Unidos por GPS — Protección Vehicular con GPS en Perú' },
@@ -47,14 +48,16 @@ const localBusinessSchema = {
   priceRange: '$$',
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const services = await getAllServices()
+
   return (
     <>
       <StructuredData data={localBusinessSchema} />
       <Hero />
       <StatsBand />
       <PainPoint />
-      <ServicesPreview />
+      <ServicesPreview services={services} />
       <HowItWorks />
       <Testimonials />
       <HomeCTA />

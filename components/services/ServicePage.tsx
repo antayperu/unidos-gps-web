@@ -2,7 +2,8 @@ import Image from 'next/image'
 import { CheckCircle } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import { contact } from '@/content/site'
-import { ServicePageData } from '@/content/servicePages'
+import type { SanityService } from '@/lib/sanity.types'
+import { urlFor } from '@/lib/sanity.image'
 
 const WhatsAppIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -10,12 +11,13 @@ const WhatsAppIcon = () => (
   </svg>
 )
 
-
-
-type Props = { data: ServicePageData }
+type Props = { data: SanityService }
 
 export default function ServicePage({ data }: Props) {
   const waHref = `${contact.whatsappHref}?text=${data.waMessage}`
+  const imageUrl = data.mainImage
+    ? urlFor(data.mainImage).width(1120).height(840).url()
+    : null
 
   return (
     <article>
@@ -49,16 +51,18 @@ export default function ServicePage({ data }: Props) {
             </div>
           </div>
 
-          {/* Imagen — visible en todos los breakpoints */}
+          {/* Imagen */}
           <div className="mt-8 lg:mt-0 relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-primary-100">
-            <Image
-              src={data.image}
-              alt={`${data.title} — Unidos por GPS`}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1023px) 100vw, 560px"
-            />
+            {imageUrl && (
+              <Image
+                src={imageUrl}
+                alt={`${data.title} — Unidos por GPS`}
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1023px) 100vw, 560px"
+              />
+            )}
           </div>
 
         </div>
@@ -74,7 +78,7 @@ export default function ServicePage({ data }: Props) {
             Características incluidas
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
-            {data.features.map((f, i) => (
+            {data.features?.map((f, i) => (
               <div key={i} className="flex gap-4 bg-white rounded-xl p-5 shadow-sm">
                 <CheckCircle
                   className="w-5 h-5 text-brand-primary-600 flex-shrink-0 mt-0.5"

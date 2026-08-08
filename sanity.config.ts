@@ -1,5 +1,6 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
+import { schemaTypes } from './sanity/schemas'
 
 export default defineConfig({
   name: 'unidos-por-gps',
@@ -8,6 +9,6 @@ export default defineConfig({
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
   plugins: [structureTool()],
   schema: {
-    types: [],
+    types: schemaTypes,
   },
 })

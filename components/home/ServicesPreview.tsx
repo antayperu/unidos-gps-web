@@ -2,9 +2,13 @@
 
 import { motion, useReducedMotion } from 'framer-motion'
 import ServiceCard from '@/components/ui/ServiceCard'
-import { services } from '@/content/services'
+import type { SanityService } from '@/lib/sanity.types'
 
-export default function ServicesPreview() {
+type Props = {
+  services: SanityService[]
+}
+
+export default function ServicesPreview({ services }: Props) {
   const prefersReduced = useReducedMotion() ?? false
 
   const container = {
@@ -58,7 +62,7 @@ export default function ServicesPreview() {
           className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
         >
           {services.map((service) => (
-            <motion.div key={service.slug} variants={item}>
+            <motion.div key={service._id} variants={item}>
               <ServiceCard service={service} />
             </motion.div>
           ))}

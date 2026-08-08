@@ -56,7 +56,7 @@ _Versión 2.0 — 2026-08-08_
 
 ## T40 — Schema Sanity: Servicios
 - **Prioridad:** P4
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Aprobada — 2026-08-08 · schema service.ts creado · ruta dinámica [slug] · 4 páginas individuales eliminadas · ServicesPreview y ServicePage leen desde Sanity · build y lint pasan
 - **Depende de:** T39
 - **Descripción:** Definir el tipo de documento `service` en Sanity con todos los campos editables: título, slug, descripción corta (para la card en Home), descripción larga (para la página interna), imagen principal, lista de características (features), y texto del CTA. Convertir las 4 páginas de servicio individuales en una sola página dinámica `app/(marketing)/servicios/[slug]/page.tsx` que lee el slug desde la URL y busca el servicio correspondiente en Sanity. Usar `generateStaticParams` para pre-generar las 4 páginas en el build. Conectar también el componente `ServicesPreview` para que lea desde Sanity. Implementar ISR con revalidación cada 60 segundos.
 - **Cambio estructural:** Las 4 páginas individuales se **eliminan** y son reemplazadas por la ruta dinámica `[slug]`. Las URLs del sitio no cambian — el visitante sigue entrando a `/servicios/gps-vehicular`, etc. Solo cambia la arquitectura interna del código.
