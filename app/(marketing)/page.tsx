@@ -7,7 +7,7 @@ import ServicesPreview from '@/components/home/ServicesPreview'
 import HowItWorks from '@/components/home/HowItWorks'
 import Testimonials from '@/components/home/Testimonials'
 import HomeCTA from '@/components/home/HomeCTA'
-import { getAllServices, getAllTestimonials } from '@/lib/sanity.queries'
+import { getAllServices, getAllTestimonials, getStats } from '@/lib/sanity.queries'
 
 export const metadata: Metadata = {
   title: { absolute: 'Unidos por GPS — Protección Vehicular con GPS en Perú' },
@@ -48,17 +48,27 @@ const localBusinessSchema = {
   priceRange: '$$',
 }
 
+const FALLBACK_STATS = [
+  { value: '13', prefix: '+', label: 'Años de experiencia', isAnimated: true },
+  { value: '24/7', label: 'Monitoreo activo', isAnimated: false },
+  { value: 'App', label: 'iOS y Android propia', isAnimated: false },
+  { value: '$0', label: 'Pago de equipo', isAnimated: false },
+]
+
 export default async function HomePage() {
-  const [services, testimonials] = await Promise.all([
+  const [services, testimonials, statsDoc] = await Promise.all([
     getAllServices(),
     getAllTestimonials(),
+    getStats(),
   ])
+
+  const stats = statsDoc?.items ?? FALLBACK_STATS
 
   return (
     <>
       <StructuredData data={localBusinessSchema} />
       <Hero />
-      <StatsBand />
+      <StatsBand stats={stats} />
       <PainPoint />
       <ServicesPreview services={services} />
       <HowItWorks />

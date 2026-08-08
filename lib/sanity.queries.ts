@@ -1,5 +1,5 @@
 import { client } from '@/lib/sanity.client'
-import type { SanityService, SanityTestimonial } from '@/lib/sanity.types'
+import type { SanityService, SanityStats, SanityTestimonial } from '@/lib/sanity.types'
 
 const serviceFields = `
   _id,
@@ -26,6 +26,14 @@ export async function getServiceBySlug(slug: string): Promise<SanityService | nu
   return client.fetch(
     `*[_type == "service" && slug.current == $slug][0] { ${serviceFields} }`,
     { slug },
+    { next: { revalidate: 60 } }
+  )
+}
+
+export async function getStats(): Promise<SanityStats | null> {
+  return client.fetch(
+    `*[_type == "stats"][0] { _id, items[] { value, prefix, label, isAnimated } }`,
+    {},
     { next: { revalidate: 60 } }
   )
 }
