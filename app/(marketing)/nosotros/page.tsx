@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import HomologatorCard from '@/components/ui/HomologatorCard'
 import { contact } from '@/content/site'
-import { getNosotros } from '@/lib/sanity.queries'
+import { getAllHomologators, getNosotros } from '@/lib/sanity.queries'
 import { urlFor } from '@/lib/sanity.image'
 
 const VALUE_ICONS = [Shield, Clock, Lightbulb, Award]
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
 }
 
 export default async function NosotrosPage() {
-  const nosotros = await getNosotros()
+  const [nosotros, sanityHomologators] = await Promise.all([getNosotros(), getAllHomologators()])
 
   const heroIntro = nosotros?.heroIntro ?? FALLBACK.heroIntro
   const historyParagraph1 = nosotros?.historyParagraph1 ?? FALLBACK.historyParagraph1
@@ -91,6 +91,16 @@ export default async function NosotrosPage() {
   const teamPhotoUrl = nosotros?.teamPhoto
     ? urlFor(nosotros.teamPhoto).width(1120).height(840).url()
     : null
+
+  const homologators =
+    sanityHomologators.length > 0
+      ? sanityHomologators.map((h) => ({
+          id: h._id,
+          name: h.name,
+          alt: h.alt,
+          src: urlFor(h.logo).width(540).height(192).url(),
+        }))
+      : HOMOLOGATORS
 
   return (
     <article>
@@ -223,7 +233,7 @@ export default async function NosotrosPage() {
             transporte en Perú.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {HOMOLOGATORS.map((org) => (
+            {homologators.map((org) => (
               <HomologatorCard key={org.id} name={org.name} src={org.src} alt={org.alt} />
             ))}
           </div>

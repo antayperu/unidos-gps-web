@@ -53,6 +53,14 @@ export interface SanityNosotros {
   teamPhoto: SanityImageAsset | null
 }
 
+export interface SanityHomologator {
+  _id: string
+  name: string
+  alt: string
+  logo: SanityImageAsset
+  order: number
+}
+
 export interface SanityService {
   _id: string
   title: string
