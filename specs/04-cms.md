@@ -161,7 +161,7 @@ _Versión 2.0 — 2026-08-08_
 
 ## T45 — Migración de contenido actual a Sanity
 - **Prioridad:** P4
-- **Estado:** ⬜ Pendiente
+- **Estado:** ✅ Completada — 2026-08-08
 - **Depende de:** T40, T41, T42, T43, T44
 - **Descripción:** Cargar manualmente todo el contenido actual del sitio en Sanity Studio: los 4 servicios con sus textos e imágenes, los 3 testimonios de placeholder, las 4 estadísticas actuales, el contenido de Nosotros (historia, misión, visión, valores, foto del equipo), y el logo de OSINERGMIN. La migración es entrada manual en el panel de Studio — no se usan scripts automáticos. Una vez migrado y verificado visualmente, se eliminan los archivos de contenido locales del repositorio.
 - **Archivos a eliminar tras la migración:**
