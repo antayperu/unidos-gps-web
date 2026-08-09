@@ -5,8 +5,8 @@ import { schemaTypes } from './sanity/schemas'
 export default defineConfig({
   name: 'unidos-por-gps',
   title: 'Unidos por GPS',
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'x4pxz0n1',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   plugins: [structureTool()],
   schema: {
     types: schemaTypes,
