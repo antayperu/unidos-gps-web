@@ -179,9 +179,10 @@ _Versión 2.0 — 2026-08-08_
 
 ---
 
-## T46 — Validación final y smoke test CMS
+## T46 — Validación final y smoke test CMS (UAT)
 - **Prioridad:** P4
-- **Estado:** ⬜ Pendiente
+- **Estado:** 🟨 En ejecución — 2026-08-08
+- **UAT activo:** mayraoc42@gmail.com invitada como Editor en Sanity. Probando flujos de edición de contenido y subida de fotos en producción.
 - **Depende de:** T45
 - **Descripción:** Prueba completa del flujo de autonomía del equipo comercial: editar un servicio, agregar un testimonio, cambiar una estadística, subir un logo, cambiar la foto de Nosotros — todo desde Studio sin ayuda del desarrollador. Verificar que cada cambio aparece en el sitio en ≤60 segundos. Ejecutar Lighthouse para confirmar que las métricas no bajaron tras la integración con Sanity CDN. Antes de esta tarea, el cliente debe haber creado las cuentas Sanity para el equipo comercial.
 - **Criterios de aceptación:**
