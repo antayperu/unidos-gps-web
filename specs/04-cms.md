@@ -210,6 +210,31 @@ _Versión 2.0 — 2026-08-08_
 
 ---
 
+## T48 — Documento de entrega y pase a producción (nuevo)
+- **Prioridad:** P4
+- **Estado:** ⬜ Pendiente
+- **Depende de:** T46
+- **Descripción:** Documento ejecutivo para el cliente que describe qué se entregó (Fase 2 con CMS Sanity — omitiendo Fase 1 que fue hito técnico interno), los requisitos pendientes para ir al dominio real (unidosporgps.pe), y el paso a paso del pase a producción. Audiencia: gerencia y área comercial del cliente.
+- **Decisión tomada:** Documentar solo Fase 2 (la versión con CMS). Fase 1 fue un hito técnico interno, no el producto final entregado.
+- **Contenido del documento:**
+  1. Qué se entrega — sitio completo con CMS, URLs actuales, capacidades del equipo comercial
+  2. Requisitos pendientes para ir a producción real:
+     - Vercel Pro ($20 USD/mes) — obligatorio para uso comercial
+     - DNS: apuntar unidosporgps.pe → Vercel (acción del cliente)
+     - Resend: verificar dominio unidosporgps.pe para emails (2h desarrollo)
+     - Logos MTC, OSIPTEL, SUTRAN: PNG con fondo transparente (cliente los sube en Studio)
+     - Transferencia Sanity: cliente crea cuenta corporativa → dev transfiere propiedad
+  3. Paso a paso del pase a producción — quién hace qué, en qué orden, tiempos estimados
+  4. Cómo usar el CMS — resumen ejecutivo (el detalle va en T47)
+  5. Garantía y soporte post-entrega
+- **Entregable:**
+  - `docs/documento-entrega-cliente.pdf`
+- **Criterios de aceptación:**
+  - Aprobado por el cliente antes del pase a producción.
+  - Cubre los 5 puntos de contenido listados.
+
+---
+
 ## Resumen de costos Fase 2
 
 | Servicio | Plan recomendado | Costo mensual |
